@@ -53,9 +53,18 @@ class OffboardControl(Node):
         # Create a timer to publish control commands
         self.timer = self.create_timer(0.1, self.timer_callback)
 
+    # def vehicle_local_position_callback(self, vehicle_local_position):
+    #     """Callback function for vehicle_local_position topic subscriber."""
+    #     self.vehicle_local_position = vehicle_local_position
+
     def vehicle_local_position_callback(self, vehicle_local_position):
         """Callback function for vehicle_local_position topic subscriber."""
         self.vehicle_local_position = vehicle_local_position
+        # Print out the current velocity and acceleration (if available)
+        self.get_logger().info(f"Current velocity: vx: {vehicle_local_position.vx}, vy: {vehicle_local_position.vy}, vz: {vehicle_local_position.vz}")
+        if hasattr(vehicle_local_position, 'ax') and hasattr(vehicle_local_position, 'ay') and hasattr(vehicle_local_position, 'az'):
+            self.get_logger().info(f"Current acceleration: ax: {vehicle_local_position.ax}, ay: {vehicle_local_position.ay}, az: {vehicle_local_position.az}")
+
 
     def vehicle_status_callback(self, vehicle_status):
         """Callback function for vehicle_status topic subscriber."""
@@ -140,7 +149,7 @@ class OffboardControl(Node):
             self.engage_offboard_mode()
             self.arm()
 
-        if self.vehicle_status.nav_state == VehicleStatus.NAVIGATION_STATE_OFFBOARD:
+        if self.current_waypoint_index < len(self.waypoints) < self.vehicle_status.nav_state == VehicleStatus.NAVIGATION_STATE_OFFBOARD:
             current_position = self.vehicle_local_position
             waypoint = self.waypoints[self.current_waypoint_index]
 
