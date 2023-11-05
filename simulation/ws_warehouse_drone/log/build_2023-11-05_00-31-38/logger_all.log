@@ -1,0 +1,271 @@
+[0.691s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.691s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7f70430300d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7f70431fb7f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7f70431fb7f0>>)
+[0.732s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.732s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.732s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.732s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.732s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.733s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.733s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.733s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extensions ['ignore', 'ignore_ament_install']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extension 'ignore'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extension 'ignore_ament_install'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extensions ['colcon_pkg']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extension 'colcon_pkg'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extensions ['colcon_meta']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extension 'colcon_meta'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extensions ['ros']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/drone_control) by extension 'ros'
+[0.747s] DEBUG:colcon.colcon_core.package_identification:Package 'src/drone_control' with type 'ros.ament_python' and name 'drone_control'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ignore', 'ignore_ament_install']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ignore_ament_install'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_pkg']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_pkg'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['colcon_meta']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'colcon_meta'
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extensions ['ros']
+[0.747s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_msgs) by extension 'ros'
+[0.748s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_msgs' with type 'ros.ament_cmake' and name 'px4_msgs'
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['ignore', 'ignore_ament_install']
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ignore'
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ignore_ament_install'
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['colcon_pkg']
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'colcon_pkg'
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['colcon_meta']
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'colcon_meta'
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extensions ['ros']
+[0.748s] Level 1:colcon.colcon_core.package_identification:_identify(src/px4_ros_com) by extension 'ros'
+[0.749s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px4_ros_com' with type 'ros.ament_cmake' and name 'px4_ros_com'
+[0.749s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.749s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.749s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.749s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.749s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.813s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.834s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 3 installed packages in /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install
+[0.845s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[0.846s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_args' from command line to 'None'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_target' from command line to 'None'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.898s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.899s] Level 5:colcon.colcon_core.verb:set package 'drone_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.899s] DEBUG:colcon.colcon_core.verb:Building package 'drone_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control', 'merge_install': False, 'path': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control', 'symlink_install': False, 'test_result_base': None}
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_args' from command line to 'None'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target' from command line to 'None'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[0.909s] Level 5:colcon.colcon_core.verb:set package 'px4_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.909s] DEBUG:colcon.colcon_core.verb:Building package 'px4_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs', 'merge_install': False, 'path': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs', 'symlink_install': False, 'test_result_base': None}
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_args' from command line to 'None'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_target' from command line to 'None'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_clean_cache' from command line to 'False'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_clean_first' from command line to 'False'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'cmake_force_configure' from command line to 'False'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'ament_cmake_args' from command line to 'None'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'catkin_cmake_args' from command line to 'None'
+[0.919s] Level 5:colcon.colcon_core.verb:set package 'px4_ros_com' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.919s] DEBUG:colcon.colcon_core.verb:Building package 'px4_ros_com' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com', 'merge_install': False, 'path': '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_ros_com', 'symlink_install': False, 'test_result_base': None}
+[0.929s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.940s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.940s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs' with build type 'ament_cmake'
+[0.940s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs'
+[0.965s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.965s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.966s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.998s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control' with build type 'ament_python'
+[0.999s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_control', 'ament_prefix_path')
+[1.009s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/ament_prefix_path.ps1'
+[1.010s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/ament_prefix_path.dsv'
+[1.010s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/ament_prefix_path.sh'
+[1.021s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.021s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.058s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble /usr/bin/cmake --build /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs -- -j8 -l8
+[1.204s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control'
+[1.214s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.214s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.674s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble /usr/bin/cmake --build /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs -- -j8 -l8
+[1.722s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control': PYTHONPATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/prefix_override:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/drone_control build --build-base /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build install --record /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/install.log --single-version-externally-managed
+[2.160s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control' returned '0': PYTHONPATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/prefix_override:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/drone_control build --build-base /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build install --record /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/install.log --single-version-externally-managed
+[2.173s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control' for CMake module files
+[2.173s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control' for CMake config files
+[2.174s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib'
+[2.174s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/bin'
+[2.174s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/pkgconfig/drone_control.pc'
+[2.174s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages'
+[2.174s] Level 1:colcon.colcon_core.shell:create_environment_hook('drone_control', 'pythonpath')
+[2.185s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/pythonpath.ps1'
+[2.186s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/pythonpath.dsv'
+[2.186s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/hook/pythonpath.sh'
+[2.187s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/bin'
+[2.187s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(drone_control)
+[2.197s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/package.ps1'
+[2.198s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/package.dsv'
+[2.199s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/package.sh'
+[2.199s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/package.bash'
+[2.200s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/drone_control/package.zsh'
+[2.200s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/share/colcon-core/packages/drone_control)
+[4.401s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble /usr/bin/cmake --install /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs
+[4.675s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[4.675s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble /usr/bin/cmake --install /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_msgs
+[4.686s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs' for CMake module files
+[4.686s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs' for CMake config files
+[4.689s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[4.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[4.700s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[4.700s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[4.701s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib'
+[4.701s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[4.711s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[4.711s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[4.712s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[4.712s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/bin'
+[4.712s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[4.712s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib/python3.10/site-packages'
+[4.712s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/bin'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.ps1'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.dsv'
+[4.723s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.sh'
+[4.724s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.bash'
+[4.724s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.zsh'
+[4.724s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[7.362s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_msgs)
+[7.373s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs' for CMake module files
+[7.373s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs' for CMake config files
+[7.376s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'cmake_prefix_path')
+[7.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.ps1'
+[7.387s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.dsv'
+[7.387s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/cmake_prefix_path.sh'
+[7.387s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib'
+[7.388s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_msgs', 'ld_library_path_lib')
+[7.398s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.ps1'
+[7.398s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.dsv'
+[7.398s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/hook/ld_library_path_lib.sh'
+[7.398s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/bin'
+[7.399s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib/pkgconfig/px4_msgs.pc'
+[7.399s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib/python3.10/site-packages'
+[7.399s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/bin'
+[7.409s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.ps1'
+[7.409s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.dsv'
+[7.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.sh'
+[7.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.bash'
+[7.410s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/px4_msgs/package.zsh'
+[7.411s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/share/colcon-core/packages/px4_msgs)
+[7.411s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_ros_com' with build type 'ament_cmake'
+[7.411s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_ros_com'
+[7.422s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[7.422s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[7.460s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com': CMAKE_PREFIX_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble LD_LIBRARY_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com -- -j8 -l8
+[7.515s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com' returned '0': CMAKE_PREFIX_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble LD_LIBRARY_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --build /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com -- -j8 -l8
+[7.542s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com': CMAKE_PREFIX_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble LD_LIBRARY_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com
+[7.550s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_ros_com)
+[7.551s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com' returned '0': CMAKE_PREFIX_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control:/opt/ros/humble LD_LIBRARY_PATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_msgs/lib:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib /usr/bin/cmake --install /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/px4_ros_com
+[7.562s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com' for CMake module files
+[7.562s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com' for CMake config files
+[7.562s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros_com', 'cmake_prefix_path')
+[7.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.ps1'
+[7.574s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.dsv'
+[7.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.sh'
+[7.575s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib'
+[7.575s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros_com', 'ld_library_path_lib')
+[7.586s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.ps1'
+[7.587s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.dsv'
+[7.587s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.sh'
+[7.587s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/bin'
+[7.588s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib/pkgconfig/px4_ros_com.pc'
+[7.588s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib/python3.10/site-packages'
+[7.588s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/bin'
+[7.598s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.ps1'
+[7.599s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.dsv'
+[7.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.sh'
+[7.599s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.bash'
+[7.600s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.zsh'
+[7.600s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/colcon-core/packages/px4_ros_com)
+[7.636s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px4_ros_com)
+[7.646s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com' for CMake module files
+[7.647s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com' for CMake config files
+[7.647s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros_com', 'cmake_prefix_path')
+[7.657s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.ps1'
+[7.658s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.dsv'
+[7.658s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/cmake_prefix_path.sh'
+[7.658s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib'
+[7.658s] Level 1:colcon.colcon_core.shell:create_environment_hook('px4_ros_com', 'ld_library_path_lib')
+[7.670s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.ps1'
+[7.670s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.dsv'
+[7.670s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/hook/ld_library_path_lib.sh'
+[7.670s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/bin'
+[7.670s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib/pkgconfig/px4_ros_com.pc'
+[7.671s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/lib/python3.10/site-packages'
+[7.671s] Level 1:colcon.colcon_core.environment:checking '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/bin'
+[7.682s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.ps1'
+[7.682s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.dsv'
+[7.683s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.sh'
+[7.683s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.bash'
+[7.683s] INFO:colcon.colcon_core.shell:Creating package script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/px4_ros_com/package.zsh'
+[7.683s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/px4_ros_com/share/colcon-core/packages/px4_ros_com)
+[7.683s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[7.684s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[7.684s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[7.684s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[7.701s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[7.701s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[7.701s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[7.710s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[7.722s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/local_setup.ps1'
+[7.723s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/_local_setup_util_ps1.py'
+[7.724s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/setup.ps1'
+[7.737s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/local_setup.sh'
+[7.737s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/_local_setup_util_sh.py'
+[7.738s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/setup.sh'
+[7.751s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/local_setup.bash'
+[7.751s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/setup.bash'
+[7.764s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/local_setup.zsh'
+[7.764s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/setup.zsh'

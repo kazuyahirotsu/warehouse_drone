@@ -1,0 +1,38 @@
+[3.300s] Invoking command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control': PYTHONPATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/prefix_override:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/drone_control build --build-base /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build install --record /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/install.log --single-version-externally-managed
+[4.959s] running egg_info
+[5.076s] writing ../../build/drone_control/drone_control.egg-info/PKG-INFO
+[5.079s] writing dependency_links to ../../build/drone_control/drone_control.egg-info/dependency_links.txt
+[5.082s] writing requirements to ../../build/drone_control/drone_control.egg-info/requires.txt
+[5.083s] writing top-level names to ../../build/drone_control/drone_control.egg-info/top_level.txt
+[5.331s] reading manifest file '../../build/drone_control/drone_control.egg-info/SOURCES.txt'
+[5.340s] writing manifest file '../../build/drone_control/drone_control.egg-info/SOURCES.txt'
+[5.340s] running build
+[5.340s] running build_py
+[5.340s] copying drone_control/mission_control.py -> /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build/lib/drone_control
+[5.341s] copying drone_control/offboard_control.py -> /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build/lib/drone_control
+[5.341s] /home/kazuya/.local/lib/python3.10/site-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[5.342s] !!
+[5.342s] 
+[5.343s]         ********************************************************************************
+[5.343s]         Please avoid running ``setup.py`` directly.
+[5.345s]         Instead, use pypa/build, pypa/installer or other
+[5.345s]         standards-based tools.
+[5.346s] 
+[5.347s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[5.348s]         ********************************************************************************
+[5.351s] 
+[5.352s] !!
+[5.352s]   self.initialize_options()
+[5.353s] running install
+[5.396s] running install_lib
+[5.523s] copying /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build/lib/drone_control/mission_control.py -> /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control
+[5.523s] copying /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build/lib/drone_control/offboard_control.py -> /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control
+[5.527s] byte-compiling /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control/mission_control.py to mission_control.cpython-310.pyc
+[5.531s] byte-compiling /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control/offboard_control.py to offboard_control.cpython-310.pyc
+[5.541s] running install_data
+[5.662s] running install_egg_info
+[5.789s] removing '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control-0.0.0-py3.10.egg-info' (and everything under it)
+[5.790s] Copying ../../build/drone_control/drone_control.egg-info to /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages/drone_control-0.0.0-py3.10.egg-info
+[5.798s] running install_scripts
+[6.984s] writing list of installed files to '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/install.log'
+[7.196s] Invoked command in '/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/drone_control' returned '0': PYTHONPATH=/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/prefix_override:/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/install/drone_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/drone_control build --build-base /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/build install --record /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/build/drone_control/install.log --single-version-externally-managed
