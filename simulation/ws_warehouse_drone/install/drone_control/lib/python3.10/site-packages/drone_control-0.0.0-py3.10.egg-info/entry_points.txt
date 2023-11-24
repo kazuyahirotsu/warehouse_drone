@@ -1,2 +1,4 @@
 [console_scripts]
+imagesubscriber = drone_control.imagesubscriber:main
+keyboard_control = drone_control.keyboard_control:main
 offboard_control = drone_control.offboard_control:main

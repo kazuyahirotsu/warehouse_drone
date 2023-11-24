@@ -36,14 +36,14 @@ class OffboardControl(Node):
         self.offboard_setpoint_counter = 0
         self.vehicle_local_position = VehicleLocalPosition()
         self.vehicle_status = VehicleStatus()
-        self.takeoff_height = -5.0
+        self.takeoff_height = -1.0
 
         # Define waypoints as a list of tuples (x, y, z)
         self.waypoints = [
-            (0.0, 0.0, -5.0),  # Takeoff and hover at 5m
-            (5.0, 0.0, -5.0), # Move 10m to the east
-            (5.0, 5.0, -5.0),  # Move 10m to the north
-            (0.0, 0.0, -5.0)   # Return to the starting position
+            (0.0, 0.0, -1.0),  # Takeoff and hover at 5m
+            (5.0, 0.0, -1.0), # Move 10m to the east
+            (-5.0, 0.0, -1.0),  # Move 10m to the north
+            (0.0, 0.0, -1.0)   # Return to the starting position
         ]
 
         # Initialize the mission

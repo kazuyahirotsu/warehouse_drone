@@ -9,7 +9,10 @@ setup.py
 ../../build/drone_control/drone_control.egg-info/top_level.txt
 ../../build/drone_control/drone_control.egg-info/zip-safe
 drone_control/__init__.py
+drone_control/imagesubscriber.py
+drone_control/keyboard_control.py
 drone_control/offboard_control.py
+launch/camera_bridge_launch.py
 resource/drone_control
 test/test_copyright.py
 test/test_flake8.py
