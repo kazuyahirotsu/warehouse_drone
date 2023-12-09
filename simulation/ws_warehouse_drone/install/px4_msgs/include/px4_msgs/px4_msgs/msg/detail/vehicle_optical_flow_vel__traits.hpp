@@ -75,14 +75,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: flow_uncompensated_integral
+  // member: flow_rate_uncompensated
   {
-    if (msg.flow_uncompensated_integral.size() == 0) {
-      out << "flow_uncompensated_integral: []";
+    if (msg.flow_rate_uncompensated.size() == 0) {
+      out << "flow_rate_uncompensated: []";
     } else {
-      out << "flow_uncompensated_integral: [";
-      size_t pending_items = msg.flow_uncompensated_integral.size();
-      for (auto item : msg.flow_uncompensated_integral) {
+      out << "flow_rate_uncompensated: [";
+      size_t pending_items = msg.flow_rate_uncompensated.size();
+      for (auto item : msg.flow_rate_uncompensated) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -93,14 +93,14 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: flow_compensated_integral
+  // member: flow_rate_compensated
   {
-    if (msg.flow_compensated_integral.size() == 0) {
-      out << "flow_compensated_integral: []";
+    if (msg.flow_rate_compensated.size() == 0) {
+      out << "flow_rate_compensated: []";
     } else {
-      out << "flow_compensated_integral: [";
-      size_t pending_items = msg.flow_compensated_integral.size();
-      for (auto item : msg.flow_compensated_integral) {
+      out << "flow_rate_compensated: [";
+      size_t pending_items = msg.flow_rate_compensated.size();
+      for (auto item : msg.flow_rate_compensated) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -119,24 +119,6 @@ inline void to_flow_style_yaml(
       out << "gyro_rate: [";
       size_t pending_items = msg.gyro_rate.size();
       for (auto item : msg.gyro_rate) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: gyro_rate_integral
-  {
-    if (msg.gyro_rate_integral.size() == 0) {
-      out << "gyro_rate_integral: []";
-    } else {
-      out << "gyro_rate_integral: [";
-      size_t pending_items = msg.gyro_rate_integral.size();
-      for (auto item : msg.gyro_rate_integral) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -173,24 +155,6 @@ inline void to_flow_style_yaml(
       out << "ref_gyro: [";
       size_t pending_items = msg.ref_gyro.size();
       for (auto item : msg.ref_gyro) {
-        rosidl_generator_traits::value_to_yaml(item, out);
-        if (--pending_items > 0) {
-          out << ", ";
-        }
-      }
-      out << "]";
-    }
-    out << ", ";
-  }
-
-  // member: meas_gyro
-  {
-    if (msg.meas_gyro.size() == 0) {
-      out << "meas_gyro: []";
-    } else {
-      out << "meas_gyro: [";
-      size_t pending_items = msg.meas_gyro.size();
-      for (auto item : msg.meas_gyro) {
         rosidl_generator_traits::value_to_yaml(item, out);
         if (--pending_items > 0) {
           out << ", ";
@@ -266,16 +230,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: flow_uncompensated_integral
+  // member: flow_rate_uncompensated
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.flow_uncompensated_integral.size() == 0) {
-      out << "flow_uncompensated_integral: []\n";
+    if (msg.flow_rate_uncompensated.size() == 0) {
+      out << "flow_rate_uncompensated: []\n";
     } else {
-      out << "flow_uncompensated_integral:\n";
-      for (auto item : msg.flow_uncompensated_integral) {
+      out << "flow_rate_uncompensated:\n";
+      for (auto item : msg.flow_rate_uncompensated) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -286,16 +250,16 @@ inline void to_block_style_yaml(
     }
   }
 
-  // member: flow_compensated_integral
+  // member: flow_rate_compensated
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    if (msg.flow_compensated_integral.size() == 0) {
-      out << "flow_compensated_integral: []\n";
+    if (msg.flow_rate_compensated.size() == 0) {
+      out << "flow_rate_compensated: []\n";
     } else {
-      out << "flow_compensated_integral:\n";
-      for (auto item : msg.flow_compensated_integral) {
+      out << "flow_rate_compensated:\n";
+      for (auto item : msg.flow_rate_compensated) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -316,26 +280,6 @@ inline void to_block_style_yaml(
     } else {
       out << "gyro_rate:\n";
       for (auto item : msg.gyro_rate) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: gyro_rate_integral
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.gyro_rate_integral.size() == 0) {
-      out << "gyro_rate_integral: []\n";
-    } else {
-      out << "gyro_rate_integral:\n";
-      for (auto item : msg.gyro_rate_integral) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }
@@ -376,26 +320,6 @@ inline void to_block_style_yaml(
     } else {
       out << "ref_gyro:\n";
       for (auto item : msg.ref_gyro) {
-        if (indentation > 0) {
-          out << std::string(indentation, ' ');
-        }
-        out << "- ";
-        rosidl_generator_traits::value_to_yaml(item, out);
-        out << "\n";
-      }
-    }
-  }
-
-  // member: meas_gyro
-  {
-    if (indentation > 0) {
-      out << std::string(indentation, ' ');
-    }
-    if (msg.meas_gyro.size() == 0) {
-      out << "meas_gyro: []\n";
-    } else {
-      out << "meas_gyro:\n";
-      for (auto item : msg.meas_gyro) {
         if (indentation > 0) {
           out << std::string(indentation, ' ');
         }

@@ -37,16 +37,32 @@ private:
   ::px4_msgs::msg::VehicleAirData msg_;
 };
 
+class Init_VehicleAirData_eas2tas
+{
+public:
+  explicit Init_VehicleAirData_eas2tas(::px4_msgs::msg::VehicleAirData & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleAirData_calibration_count eas2tas(::px4_msgs::msg::VehicleAirData::_eas2tas_type arg)
+  {
+    msg_.eas2tas = std::move(arg);
+    return Init_VehicleAirData_calibration_count(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleAirData msg_;
+};
+
 class Init_VehicleAirData_rho
 {
 public:
   explicit Init_VehicleAirData_rho(::px4_msgs::msg::VehicleAirData & msg)
   : msg_(msg)
   {}
-  Init_VehicleAirData_calibration_count rho(::px4_msgs::msg::VehicleAirData::_rho_type arg)
+  Init_VehicleAirData_eas2tas rho(::px4_msgs::msg::VehicleAirData::_rho_type arg)
   {
     msg_.rho = std::move(arg);
-    return Init_VehicleAirData_calibration_count(msg_);
+    return Init_VehicleAirData_eas2tas(msg_);
   }
 
 private:

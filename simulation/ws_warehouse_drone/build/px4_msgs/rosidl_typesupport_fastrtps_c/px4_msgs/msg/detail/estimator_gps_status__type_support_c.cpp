@@ -377,6 +377,8 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -387,6 +389,7 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -394,6 +397,7 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -401,72 +405,84 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_gps_fix
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_min_sat_count
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_pdop
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_horz_err
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_vert_err
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_spd_err
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_horz_drift
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_vert_drift
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_horz_spd_err
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: check_fail_max_vert_spd_err
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: position_drift_rate_horizontal_m_s
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -474,6 +490,7 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -481,11 +498,25 @@ size_t max_serialized_size_px4_msgs__msg__EstimatorGpsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__EstimatorGpsStatus;
+    is_plain =
+      (
+      offsetof(DataType, filtered_horizontal_speed_m_s) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _EstimatorGpsStatus__max_serialized_size(char & bounds_info)

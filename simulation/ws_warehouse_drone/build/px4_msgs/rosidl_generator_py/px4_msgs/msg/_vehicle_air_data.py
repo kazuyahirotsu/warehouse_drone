@@ -64,6 +64,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         '_baro_temp_celcius',
         '_baro_pressure_pa',
         '_rho',
+        '_eas2tas',
         '_calibration_count',
     ]
 
@@ -75,6 +76,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         'baro_temp_celcius': 'float',
         'baro_pressure_pa': 'float',
         'rho': 'float',
+        'eas2tas': 'float',
         'calibration_count': 'uint8',
     }
 
@@ -82,6 +84,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint64'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
@@ -100,6 +103,7 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         self.baro_temp_celcius = kwargs.get('baro_temp_celcius', float())
         self.baro_pressure_pa = kwargs.get('baro_pressure_pa', float())
         self.rho = kwargs.get('rho', float())
+        self.eas2tas = kwargs.get('eas2tas', float())
         self.calibration_count = kwargs.get('calibration_count', int())
 
     def __repr__(self):
@@ -144,6 +148,8 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
         if self.baro_pressure_pa != other.baro_pressure_pa:
             return False
         if self.rho != other.rho:
+            return False
+        if self.eas2tas != other.eas2tas:
             return False
         if self.calibration_count != other.calibration_count:
             return False
@@ -258,6 +264,21 @@ class VehicleAirData(metaclass=Metaclass_VehicleAirData):
             assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
                 "The 'rho' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
         self._rho = value
+
+    @builtins.property
+    def eas2tas(self):
+        """Message field 'eas2tas'."""
+        return self._eas2tas
+
+    @eas2tas.setter
+    def eas2tas(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'eas2tas' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'eas2tas' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._eas2tas = value
 
     @builtins.property
     def calibration_count(self):

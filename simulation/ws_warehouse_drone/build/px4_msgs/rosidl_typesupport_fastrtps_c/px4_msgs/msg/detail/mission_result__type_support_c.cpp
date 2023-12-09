@@ -54,9 +54,19 @@ static bool _MissionResult__cdr_serialize(
     cdr << ros_message->timestamp;
   }
 
-  // Field name: instance_count
+  // Field name: mission_update_counter
   {
-    cdr << ros_message->instance_count;
+    cdr << ros_message->mission_update_counter;
+  }
+
+  // Field name: geofence_update_counter
+  {
+    cdr << ros_message->geofence_update_counter;
+  }
+
+  // Field name: home_position_counter
+  {
+    cdr << ros_message->home_position_counter;
   }
 
   // Field name: seq_reached
@@ -131,9 +141,19 @@ static bool _MissionResult__cdr_deserialize(
     cdr >> ros_message->timestamp;
   }
 
-  // Field name: instance_count
+  // Field name: mission_update_counter
   {
-    cdr >> ros_message->instance_count;
+    cdr >> ros_message->mission_update_counter;
+  }
+
+  // Field name: geofence_update_counter
+  {
+    cdr >> ros_message->geofence_update_counter;
+  }
+
+  // Field name: home_position_counter
+  {
+    cdr >> ros_message->home_position_counter;
   }
 
   // Field name: seq_reached
@@ -224,9 +244,21 @@ size_t get_serialized_size_px4_msgs__msg__MissionResult(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name instance_count
+  // field.name mission_update_counter
   {
-    size_t item_size = sizeof(ros_message->instance_count);
+    size_t item_size = sizeof(ros_message->mission_update_counter);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name geofence_update_counter
+  {
+    size_t item_size = sizeof(ros_message->geofence_update_counter);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name home_position_counter
+  {
+    size_t item_size = sizeof(ros_message->home_position_counter);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -317,6 +349,8 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -327,20 +361,39 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: instance_count
+  // member: mission_update_counter
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+    last_member_size = array_size * sizeof(uint16_t);
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: geofence_update_counter
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint16_t);
+    current_alignment += array_size * sizeof(uint16_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
+  }
+  // member: home_position_counter
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
   // member: seq_reached
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -348,6 +401,7 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -355,6 +409,7 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -362,36 +417,42 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: warning
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: finished
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: failure
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: item_do_jump_changed
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: item_changed_index
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -399,6 +460,7 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -406,10 +468,24 @@ size_t max_serialized_size_px4_msgs__msg__MissionResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__MissionResult;
+    is_plain =
+      (
+      offsetof(DataType, execution_mode) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _MissionResult__max_serialized_size(char & bounds_info)

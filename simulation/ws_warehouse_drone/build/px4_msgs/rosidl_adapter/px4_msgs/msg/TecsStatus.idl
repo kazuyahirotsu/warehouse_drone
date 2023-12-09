@@ -5,10 +5,6 @@
 
 module px4_msgs {
   module msg {
-    module TecsStatus_Constants {
-      const uint8 TECS_MODE_NORMAL = 0;
-      const uint8 TECS_MODE_UNDERSPEED = 1;
-    };
     struct TecsStatus {
       @verbatim (language="comment", text=
         "time since system start (microseconds)")
@@ -119,8 +115,8 @@ module px4_msgs {
       float throttle_trim;
 
       @verbatim (language="comment", text=
-        "TECS mode")
-      uint8 mode;
+        "0: no underspeed, 1: maximal underspeed. Controller takes measures to avoid stall proportional to ratio if >0.")
+      float underspeed_ratio;
     };
   };
 };

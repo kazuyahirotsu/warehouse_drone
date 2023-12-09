@@ -407,14 +407,14 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__TecsStat
     NULL  // resize(index) function pointer
   },
   {
-    "mode",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    "underspeed_ratio",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__TecsStatus, mode),  // bytes offset in struct
+    offsetof(px4_msgs__msg__TecsStatus, underspeed_ratio),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

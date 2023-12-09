@@ -469,6 +469,8 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -479,6 +481,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -486,6 +489,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -493,6 +497,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -500,6 +505,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -507,6 +513,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -514,6 +521,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 3;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -521,6 +529,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 3;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -528,6 +537,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -535,6 +545,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -542,6 +553,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -549,6 +561,7 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -556,64 +569,87 @@ size_t max_serialized_size_px4_msgs__msg__SensorGnssRelative(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: differential_solution
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: relative_position_valid
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: carrier_solution_floating
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: carrier_solution_fixed
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: moving_base_mode
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: reference_position_miss
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: reference_observations_miss
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: heading_valid
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: relative_position_normalized
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__SensorGnssRelative;
+    is_plain =
+      (
+      offsetof(DataType, relative_position_normalized) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _SensorGnssRelative__max_serialized_size(char & bounds_info)

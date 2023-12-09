@@ -22,6 +22,10 @@ msg/AirspeedValidated.idl
 msg/AirspeedValidated.msg
 msg/AirspeedWind.idl
 msg/AirspeedWind.msg
+msg/ArmingCheckReply.idl
+msg/ArmingCheckReply.msg
+msg/ArmingCheckRequest.idl
+msg/ArmingCheckRequest.msg
 msg/AutotuneAttitudeControlStatus.idl
 msg/AutotuneAttitudeControlStatus.msg
 msg/BatteryStatus.idl
@@ -40,6 +44,8 @@ msg/CollisionConstraints.idl
 msg/CollisionConstraints.msg
 msg/CollisionReport.idl
 msg/CollisionReport.msg
+msg/ConfigOverrides.idl
+msg/ConfigOverrides.msg
 msg/ControlAllocatorStatus.idl
 msg/ControlAllocatorStatus.msg
 msg/Cpuload.idl
@@ -184,6 +190,10 @@ msg/MavlinkLog.idl
 msg/MavlinkLog.msg
 msg/MavlinkTunnel.idl
 msg/MavlinkTunnel.msg
+msg/MessageFormatRequest.idl
+msg/MessageFormatRequest.msg
+msg/MessageFormatResponse.idl
+msg/MessageFormatResponse.msg
 msg/Mission.idl
 msg/Mission.msg
 msg/MissionResult.idl
@@ -246,6 +256,10 @@ msg/RcChannels.idl
 msg/RcChannels.msg
 msg/RcParameterMap.idl
 msg/RcParameterMap.msg
+msg/RegisterExtComponentReply.idl
+msg/RegisterExtComponentReply.msg
+msg/RegisterExtComponentRequest.idl
+msg/RegisterExtComponentRequest.msg
 msg/Rpm.idl
 msg/Rpm.msg
 msg/RtlTimeEstimate.idl
@@ -320,6 +334,8 @@ msg/UlogStream.idl
 msg/UlogStream.msg
 msg/UlogStreamAck.idl
 msg/UlogStreamAck.msg
+msg/UnregisterExtComponent.idl
+msg/UnregisterExtComponent.msg
 msg/VehicleAcceleration.idl
 msg/VehicleAcceleration.msg
 msg/VehicleAirData.idl
@@ -380,3 +396,7 @@ msg/Wind.idl
 msg/Wind.msg
 msg/YawEstimatorStatus.idl
 msg/YawEstimatorStatus.msg
+srv/VehicleCommand.idl
+srv/VehicleCommand.srv
+srv/VehicleCommand_Request.msg
+srv/VehicleCommand_Response.msg

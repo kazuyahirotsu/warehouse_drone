@@ -179,10 +179,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: mode
+  // member: underspeed_ratio
   {
-    out << "mode: ";
-    rosidl_generator_traits::value_to_yaml(msg.mode, out);
+    out << "underspeed_ratio: ";
+    rosidl_generator_traits::value_to_yaml(msg.underspeed_ratio, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -411,13 +411,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: mode
+  // member: underspeed_ratio
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "mode: ";
-    rosidl_generator_traits::value_to_yaml(msg.mode, out);
+    out << "underspeed_ratio: ";
+    rosidl_generator_traits::value_to_yaml(msg.underspeed_ratio, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

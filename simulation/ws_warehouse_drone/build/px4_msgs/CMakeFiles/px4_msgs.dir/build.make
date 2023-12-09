@@ -78,6 +78,8 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/Airspeed.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/AirspeedValidated.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/AirspeedWind.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ArmingCheckReply.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ArmingCheckRequest.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/AutotuneAttitudeControlStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/BatteryStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ButtonEvent.msg
@@ -87,6 +89,7 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/CellularStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/CollisionConstraints.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/CollisionReport.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ConfigOverrides.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ControlAllocatorStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/Cpuload.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/DatamanRequest.msg
@@ -159,6 +162,8 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ManualControlSwitches.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/MavlinkLog.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/MavlinkTunnel.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/MessageFormatRequest.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/MessageFormatResponse.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/Mission.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/MissionResult.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/ModeCompleted.msg
@@ -190,6 +195,8 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RateCtrlStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RcChannels.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RcParameterMap.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RegisterExtComponentReply.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RegisterExtComponentRequest.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/Rpm.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/RtlTimeEstimate.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/SatelliteInfo.msg
@@ -227,6 +234,7 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/UavcanParameterValue.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/UlogStream.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/UlogStreamAck.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/UnregisterExtComponent.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/VehicleAcceleration.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/VehicleAirData.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/VehicleAngularAccelerationSetpoint.msg
@@ -257,6 +265,9 @@ CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/VtolVehicleStatus.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/Wind.msg
 CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/msg/YawEstimatorStatus.msg
+CMakeFiles/px4_msgs: /home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs/srv/VehicleCommand.srv
+CMakeFiles/px4_msgs: rosidl_cmake/srv/VehicleCommand_Request.msg
+CMakeFiles/px4_msgs: rosidl_cmake/srv/VehicleCommand_Response.msg
 CMakeFiles/px4_msgs: /opt/ros/humble/share/builtin_interfaces/msg/Duration.idl
 CMakeFiles/px4_msgs: /opt/ros/humble/share/builtin_interfaces/msg/Time.idl
 

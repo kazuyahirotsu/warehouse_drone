@@ -21,15 +21,15 @@ namespace msg
 namespace builder
 {
 
-class Init_GeofenceResult_home_required
+class Init_GeofenceResult_geofence_action
 {
 public:
-  explicit Init_GeofenceResult_home_required(::px4_msgs::msg::GeofenceResult & msg)
+  explicit Init_GeofenceResult_geofence_action(::px4_msgs::msg::GeofenceResult & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::GeofenceResult home_required(::px4_msgs::msg::GeofenceResult::_home_required_type arg)
+  ::px4_msgs::msg::GeofenceResult geofence_action(::px4_msgs::msg::GeofenceResult::_geofence_action_type arg)
   {
-    msg_.home_required = std::move(arg);
+    msg_.geofence_action = std::move(arg);
     return std::move(msg_);
   }
 
@@ -37,48 +37,48 @@ private:
   ::px4_msgs::msg::GeofenceResult msg_;
 };
 
-class Init_GeofenceResult_primary_geofence_action
+class Init_GeofenceResult_geofence_custom_fence_triggered
 {
 public:
-  explicit Init_GeofenceResult_primary_geofence_action(::px4_msgs::msg::GeofenceResult & msg)
+  explicit Init_GeofenceResult_geofence_custom_fence_triggered(::px4_msgs::msg::GeofenceResult & msg)
   : msg_(msg)
   {}
-  Init_GeofenceResult_home_required primary_geofence_action(::px4_msgs::msg::GeofenceResult::_primary_geofence_action_type arg)
+  Init_GeofenceResult_geofence_action geofence_custom_fence_triggered(::px4_msgs::msg::GeofenceResult::_geofence_custom_fence_triggered_type arg)
   {
-    msg_.primary_geofence_action = std::move(arg);
-    return Init_GeofenceResult_home_required(msg_);
+    msg_.geofence_custom_fence_triggered = std::move(arg);
+    return Init_GeofenceResult_geofence_action(msg_);
   }
 
 private:
   ::px4_msgs::msg::GeofenceResult msg_;
 };
 
-class Init_GeofenceResult_primary_geofence_breached
+class Init_GeofenceResult_geofence_max_alt_triggered
 {
 public:
-  explicit Init_GeofenceResult_primary_geofence_breached(::px4_msgs::msg::GeofenceResult & msg)
+  explicit Init_GeofenceResult_geofence_max_alt_triggered(::px4_msgs::msg::GeofenceResult & msg)
   : msg_(msg)
   {}
-  Init_GeofenceResult_primary_geofence_action primary_geofence_breached(::px4_msgs::msg::GeofenceResult::_primary_geofence_breached_type arg)
+  Init_GeofenceResult_geofence_custom_fence_triggered geofence_max_alt_triggered(::px4_msgs::msg::GeofenceResult::_geofence_max_alt_triggered_type arg)
   {
-    msg_.primary_geofence_breached = std::move(arg);
-    return Init_GeofenceResult_primary_geofence_action(msg_);
+    msg_.geofence_max_alt_triggered = std::move(arg);
+    return Init_GeofenceResult_geofence_custom_fence_triggered(msg_);
   }
 
 private:
   ::px4_msgs::msg::GeofenceResult msg_;
 };
 
-class Init_GeofenceResult_geofence_violation_reason
+class Init_GeofenceResult_geofence_max_dist_triggered
 {
 public:
-  explicit Init_GeofenceResult_geofence_violation_reason(::px4_msgs::msg::GeofenceResult & msg)
+  explicit Init_GeofenceResult_geofence_max_dist_triggered(::px4_msgs::msg::GeofenceResult & msg)
   : msg_(msg)
   {}
-  Init_GeofenceResult_primary_geofence_breached geofence_violation_reason(::px4_msgs::msg::GeofenceResult::_geofence_violation_reason_type arg)
+  Init_GeofenceResult_geofence_max_alt_triggered geofence_max_dist_triggered(::px4_msgs::msg::GeofenceResult::_geofence_max_dist_triggered_type arg)
   {
-    msg_.geofence_violation_reason = std::move(arg);
-    return Init_GeofenceResult_primary_geofence_breached(msg_);
+    msg_.geofence_max_dist_triggered = std::move(arg);
+    return Init_GeofenceResult_geofence_max_alt_triggered(msg_);
   }
 
 private:
@@ -91,10 +91,10 @@ public:
   Init_GeofenceResult_timestamp()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_GeofenceResult_geofence_violation_reason timestamp(::px4_msgs::msg::GeofenceResult::_timestamp_type arg)
+  Init_GeofenceResult_geofence_max_dist_triggered timestamp(::px4_msgs::msg::GeofenceResult::_timestamp_type arg)
   {
     msg_.timestamp = std::move(arg);
-    return Init_GeofenceResult_geofence_violation_reason(msg_);
+    return Init_GeofenceResult_geofence_max_dist_triggered(msg_);
   }
 
 private:

@@ -17,18 +17,6 @@ extern "C"
 
 // Constants defined in the message
 
-/// Constant 'TECS_MODE_NORMAL'.
-enum
-{
-  px4_msgs__msg__TecsStatus__TECS_MODE_NORMAL = 0
-};
-
-/// Constant 'TECS_MODE_UNDERSPEED'.
-enum
-{
-  px4_msgs__msg__TecsStatus__TECS_MODE_UNDERSPEED = 1
-};
-
 /// Struct defined in msg/TecsStatus in the package px4_msgs.
 typedef struct px4_msgs__msg__TecsStatus
 {
@@ -76,8 +64,8 @@ typedef struct px4_msgs__msg__TecsStatus
   float pitch_sp_rad;
   /// estimated throttle value [0,1] required to fly level at equivalent_airspeed_sp in the current atmospheric conditions
   float throttle_trim;
-  /// TECS mode
-  uint8_t mode;
+  /// 0: no underspeed, 1: maximal underspeed. Controller takes measures to avoid stall proportional to ratio if >0.
+  float underspeed_ratio;
 } px4_msgs__msg__TecsStatus;
 
 // Struct for a sequence of px4_msgs__msg__TecsStatus.

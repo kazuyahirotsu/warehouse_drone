@@ -67,7 +67,7 @@ struct FailsafeFlags_
       this->battery_warning = 0;
       this->battery_low_remaining_time = false;
       this->battery_unhealthy = false;
-      this->primary_geofence_breached = false;
+      this->geofence_breached = false;
       this->mission_failure = false;
       this->vtol_fixed_wing_system_failure = false;
       this->wind_limit_exceeded = false;
@@ -115,7 +115,7 @@ struct FailsafeFlags_
       this->battery_warning = 0;
       this->battery_low_remaining_time = false;
       this->battery_unhealthy = false;
-      this->primary_geofence_breached = false;
+      this->geofence_breached = false;
       this->mission_failure = false;
       this->vtol_fixed_wing_system_failure = false;
       this->wind_limit_exceeded = false;
@@ -216,9 +216,9 @@ struct FailsafeFlags_
   using _battery_unhealthy_type =
     bool;
   _battery_unhealthy_type battery_unhealthy;
-  using _primary_geofence_breached_type =
+  using _geofence_breached_type =
     bool;
-  _primary_geofence_breached_type primary_geofence_breached;
+  _geofence_breached_type geofence_breached;
   using _mission_failure_type =
     bool;
   _mission_failure_type mission_failure;
@@ -422,10 +422,10 @@ struct FailsafeFlags_
     this->battery_unhealthy = _arg;
     return *this;
   }
-  Type & set__primary_geofence_breached(
+  Type & set__geofence_breached(
     const bool & _arg)
   {
-    this->primary_geofence_breached = _arg;
+    this->geofence_breached = _arg;
     return *this;
   }
   Type & set__mission_failure(
@@ -612,7 +612,7 @@ struct FailsafeFlags_
     if (this->battery_unhealthy != other.battery_unhealthy) {
       return false;
     }
-    if (this->primary_geofence_breached != other.primary_geofence_breached) {
+    if (this->geofence_breached != other.geofence_breached) {
       return false;
     }
     if (this->mission_failure != other.mission_failure) {

@@ -31,7 +31,7 @@ void px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleA
   px4_msgs__msg__VehicleAirData__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleAirData_message_member_array[8] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleAirData_message_member_array[9] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
@@ -152,6 +152,23 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleA
     NULL  // resize(index) function pointer
   },
   {
+    "eas2tas",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleAirData, eas2tas),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
     "calibration_count",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
@@ -173,7 +190,7 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleA
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleAirData_message_members = {
   "px4_msgs__msg",  // message namespace
   "VehicleAirData",  // message name
-  8,  // number of fields
+  9,  // number of fields
   sizeof(px4_msgs__msg__VehicleAirData),
   px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleAirData_message_member_array,  // message members
   px4_msgs__msg__VehicleAirData__rosidl_typesupport_introspection_c__VehicleAirData_init_function,  // function to initialize message memory (memory has to be allocated)

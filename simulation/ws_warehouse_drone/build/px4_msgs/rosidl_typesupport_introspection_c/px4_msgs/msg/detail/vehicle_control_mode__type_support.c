@@ -31,7 +31,7 @@ void px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__Vehi
   px4_msgs__msg__VehicleControlMode__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__VehicleControlMode_message_member_array[15] = {
+static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__VehicleControlMode_message_member_array[16] = {
   {
     "timestamp",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT64,  // type
@@ -135,48 +135,14 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleC
     NULL  // resize(index) function pointer
   },
   {
-    "flag_control_rates_enabled",  // name
+    "flag_control_position_enabled",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_rates_enabled),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "flag_control_attitude_enabled",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_attitude_enabled),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "flag_control_acceleration_enabled",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_acceleration_enabled),  // bytes offset in struct
+    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_position_enabled),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -194,23 +160,6 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleC
     0,  // array size
     false,  // is upper bound
     offsetof(px4_msgs__msg__VehicleControlMode, flag_control_velocity_enabled),  // bytes offset in struct
-    NULL,  // default value
-    NULL,  // size() function pointer
-    NULL,  // get_const(index) function pointer
-    NULL,  // get(index) function pointer
-    NULL,  // fetch(index, &value) function pointer
-    NULL,  // assign(index, value) function pointer
-    NULL  // resize(index) function pointer
-  },
-  {
-    "flag_control_position_enabled",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
-    0,  // upper bound of string
-    NULL,  // members of sub message
-    false,  // is array
-    0,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_position_enabled),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -254,14 +203,48 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleC
     NULL  // resize(index) function pointer
   },
   {
-    "flag_control_termination_enabled",  // name
+    "flag_control_acceleration_enabled",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_termination_enabled),  // bytes offset in struct
+    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_acceleration_enabled),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "flag_control_attitude_enabled",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_attitude_enabled),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "flag_control_rates_enabled",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_rates_enabled),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -286,13 +269,47 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__VehicleC
     NULL,  // fetch(index, &value) function pointer
     NULL,  // assign(index, value) function pointer
     NULL  // resize(index) function pointer
+  },
+  {
+    "flag_control_termination_enabled",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleControlMode, flag_control_termination_enabled),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "source_id",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(px4_msgs__msg__VehicleControlMode, source_id),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__VehicleControlMode_message_members = {
   "px4_msgs__msg",  // message namespace
   "VehicleControlMode",  // message name
-  15,  // number of fields
+  16,  // number of fields
   sizeof(px4_msgs__msg__VehicleControlMode),
   px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__VehicleControlMode_message_member_array,  // message members
   px4_msgs__msg__VehicleControlMode__rosidl_typesupport_introspection_c__VehicleControlMode_init_function,  // function to initialize message memory (memory has to be allocated)

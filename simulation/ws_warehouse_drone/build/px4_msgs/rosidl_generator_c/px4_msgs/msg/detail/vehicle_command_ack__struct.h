@@ -145,7 +145,8 @@ typedef struct px4_msgs__msg__VehicleCommandAck
   /// Additional parameter of the result, example: which parameter of MAV_CMD_NAV_WAYPOINT caused it to be denied.
   int32_t result_param2;
   uint8_t target_system;
-  uint8_t target_component;
+  /// Target component / mode executor
+  uint16_t target_component;
   /// Indicates if the command came from an external source
   bool from_external;
 } px4_msgs__msg__VehicleCommandAck;

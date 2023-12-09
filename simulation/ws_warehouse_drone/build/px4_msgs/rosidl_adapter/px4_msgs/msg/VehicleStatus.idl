@@ -83,7 +83,15 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "Takeoff, transition, establish loiter")
       const uint8 NAVIGATION_STATE_AUTO_VTOL_TAKEOFF = 22;
-      const uint8 NAVIGATION_STATE_MAX = 23;
+      const uint8 NAVIGATION_STATE_EXTERNAL1 = 23;
+      const uint8 NAVIGATION_STATE_EXTERNAL2 = 24;
+      const uint8 NAVIGATION_STATE_EXTERNAL3 = 25;
+      const uint8 NAVIGATION_STATE_EXTERNAL4 = 26;
+      const uint8 NAVIGATION_STATE_EXTERNAL5 = 27;
+      const uint8 NAVIGATION_STATE_EXTERNAL6 = 28;
+      const uint8 NAVIGATION_STATE_EXTERNAL7 = 29;
+      const uint8 NAVIGATION_STATE_EXTERNAL8 = 30;
+      const uint8 NAVIGATION_STATE_MAX = 31;
       const uint16 FAILURE_NONE = 0;
       @verbatim (language="comment", text=
         "(1 << 0)")
@@ -116,6 +124,11 @@ module px4_msgs {
       const uint8 VEHICLE_TYPE_FIXED_WING = 2;
       const uint8 VEHICLE_TYPE_ROVER = 3;
       const uint8 VEHICLE_TYPE_AIRSHIP = 4;
+      const uint8 FAILSAFE_DEFER_STATE_DISABLED = 0;
+      const uint8 FAILSAFE_DEFER_STATE_ENABLED = 1;
+      @verbatim (language="comment", text=
+        "Failsafes deferred, but would trigger a failsafe")
+      const uint8 FAILSAFE_DEFER_STATE_WOULD_FAILSAFE = 2;
     };
     @verbatim (language="comment", text=
       "Encodes the system state of the vehicle published by commander")
@@ -151,6 +164,18 @@ module px4_msgs {
       uint8 nav_state;
 
       @verbatim (language="comment", text=
+        "Current mode executor in charge (0=Autopilot)")
+      uint8 executor_in_charge;
+
+      @verbatim (language="comment", text=
+        "Bitmask for all valid nav_state values")
+      uint32 valid_nav_states_mask;
+
+      @verbatim (language="comment", text=
+        "Bitmask for all modes that a user can select")
+      uint32 can_set_nav_states_mask;
+
+      @verbatim (language="comment", text=
         "Bitmask of detected failures")
       uint16 failure_detector_status;
 
@@ -167,6 +192,10 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "true if system is in failsafe state but the user took over control")
       boolean failsafe_and_user_took_over;
+
+      @verbatim (language="comment", text=
+        "one of FAILSAFE_DEFER_STATE_*")
+      uint8 failsafe_defer_state;
 
       @verbatim (language="comment", text=
         "Link loss" "\n"

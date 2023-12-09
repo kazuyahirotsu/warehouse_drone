@@ -90,6 +90,7 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_PREFLIGHT_STORAGE': 245,
         'VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN': 246,
         'VEHICLE_CMD_OBLIQUE_SURVEY': 260,
+        'VEHICLE_CMD_DO_SET_STANDARD_MODE': 262,
         'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION': 283,
         'VEHICLE_CMD_MISSION_START': 300,
         'VEHICLE_CMD_ACTUATOR_TEST': 310,
@@ -119,6 +120,7 @@ class Metaclass_VehicleCommand(type):
         'VEHICLE_CMD_DO_WINCH': 42600,
         'VEHICLE_CMD_PX4_INTERNAL_START': 65537,
         'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN': 100000,
+        'VEHICLE_CMD_SET_NAV_STATE': 100001,
         'VEHICLE_MOUNT_MODE_RETRACT': 0,
         'VEHICLE_MOUNT_MODE_NEUTRAL': 1,
         'VEHICLE_MOUNT_MODE_MAVLINK_TARGETING': 2,
@@ -166,6 +168,7 @@ class Metaclass_VehicleCommand(type):
         'GRIPPER_ACTION_RELEASE': 0,
         'GRIPPER_ACTION_GRAB': 1,
         'ORB_QUEUE_LENGTH': 8,
+        'COMPONENT_MODE_EXECUTOR_START': 1000,
     }
 
     @classmethod
@@ -262,6 +265,7 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_PREFLIGHT_STORAGE': cls.__constants['VEHICLE_CMD_PREFLIGHT_STORAGE'],
             'VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN': cls.__constants['VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN'],
             'VEHICLE_CMD_OBLIQUE_SURVEY': cls.__constants['VEHICLE_CMD_OBLIQUE_SURVEY'],
+            'VEHICLE_CMD_DO_SET_STANDARD_MODE': cls.__constants['VEHICLE_CMD_DO_SET_STANDARD_MODE'],
             'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION': cls.__constants['VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION'],
             'VEHICLE_CMD_MISSION_START': cls.__constants['VEHICLE_CMD_MISSION_START'],
             'VEHICLE_CMD_ACTUATOR_TEST': cls.__constants['VEHICLE_CMD_ACTUATOR_TEST'],
@@ -291,6 +295,7 @@ class Metaclass_VehicleCommand(type):
             'VEHICLE_CMD_DO_WINCH': cls.__constants['VEHICLE_CMD_DO_WINCH'],
             'VEHICLE_CMD_PX4_INTERNAL_START': cls.__constants['VEHICLE_CMD_PX4_INTERNAL_START'],
             'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN': cls.__constants['VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN'],
+            'VEHICLE_CMD_SET_NAV_STATE': cls.__constants['VEHICLE_CMD_SET_NAV_STATE'],
             'VEHICLE_MOUNT_MODE_RETRACT': cls.__constants['VEHICLE_MOUNT_MODE_RETRACT'],
             'VEHICLE_MOUNT_MODE_NEUTRAL': cls.__constants['VEHICLE_MOUNT_MODE_NEUTRAL'],
             'VEHICLE_MOUNT_MODE_MAVLINK_TARGETING': cls.__constants['VEHICLE_MOUNT_MODE_MAVLINK_TARGETING'],
@@ -338,6 +343,7 @@ class Metaclass_VehicleCommand(type):
             'GRIPPER_ACTION_RELEASE': cls.__constants['GRIPPER_ACTION_RELEASE'],
             'GRIPPER_ACTION_GRAB': cls.__constants['GRIPPER_ACTION_GRAB'],
             'ORB_QUEUE_LENGTH': cls.__constants['ORB_QUEUE_LENGTH'],
+            'COMPONENT_MODE_EXECUTOR_START': cls.__constants['COMPONENT_MODE_EXECUTOR_START'],
         }
 
     @property
@@ -681,6 +687,11 @@ class Metaclass_VehicleCommand(type):
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_OBLIQUE_SURVEY']
 
     @property
+    def VEHICLE_CMD_DO_SET_STANDARD_MODE(self):
+        """Message constant 'VEHICLE_CMD_DO_SET_STANDARD_MODE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_DO_SET_STANDARD_MODE']
+
+    @property
     def VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION(self):
         """Message constant 'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION']
@@ -824,6 +835,11 @@ class Metaclass_VehicleCommand(type):
     def VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN(self):
         """Message constant 'VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN'."""
         return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN']
+
+    @property
+    def VEHICLE_CMD_SET_NAV_STATE(self):
+        """Message constant 'VEHICLE_CMD_SET_NAV_STATE'."""
+        return Metaclass_VehicleCommand.__constants['VEHICLE_CMD_SET_NAV_STATE']
 
     @property
     def VEHICLE_MOUNT_MODE_RETRACT(self):
@@ -1060,6 +1076,11 @@ class Metaclass_VehicleCommand(type):
         """Message constant 'ORB_QUEUE_LENGTH'."""
         return Metaclass_VehicleCommand.__constants['ORB_QUEUE_LENGTH']
 
+    @property
+    def COMPONENT_MODE_EXECUTOR_START(self):
+        """Message constant 'COMPONENT_MODE_EXECUTOR_START'."""
+        return Metaclass_VehicleCommand.__constants['COMPONENT_MODE_EXECUTOR_START']
+
 
 class VehicleCommand(metaclass=Metaclass_VehicleCommand):
     """
@@ -1134,6 +1155,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_PREFLIGHT_STORAGE
       VEHICLE_CMD_PREFLIGHT_REBOOT_SHUTDOWN
       VEHICLE_CMD_OBLIQUE_SURVEY
+      VEHICLE_CMD_DO_SET_STANDARD_MODE
       VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION
       VEHICLE_CMD_MISSION_START
       VEHICLE_CMD_ACTUATOR_TEST
@@ -1163,6 +1185,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       VEHICLE_CMD_DO_WINCH
       VEHICLE_CMD_PX4_INTERNAL_START
       VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN
+      VEHICLE_CMD_SET_NAV_STATE
       VEHICLE_MOUNT_MODE_RETRACT
       VEHICLE_MOUNT_MODE_NEUTRAL
       VEHICLE_MOUNT_MODE_MAVLINK_TARGETING
@@ -1210,6 +1233,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
       GRIPPER_ACTION_RELEASE
       GRIPPER_ACTION_GRAB
       ORB_QUEUE_LENGTH
+      COMPONENT_MODE_EXECUTOR_START
     """
 
     __slots__ = [
@@ -1243,7 +1267,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         'target_system': 'uint8',
         'target_component': 'uint8',
         'source_system': 'uint8',
-        'source_component': 'uint8',
+        'source_component': 'uint16',
         'confirmation': 'uint8',
         'from_external': 'boolean',
     }
@@ -1261,7 +1285,7 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
@@ -1543,8 +1567,8 @@ class VehicleCommand(metaclass=Metaclass_VehicleCommand):
             assert \
                 isinstance(value, int), \
                 "The 'source_component' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'source_component' field must be an unsigned integer in [0, 255]"
+            assert value >= 0 and value < 65536, \
+                "The 'source_component' field must be an unsigned integer in [0, 65535]"
         self._source_component = value
 
     @builtins.property

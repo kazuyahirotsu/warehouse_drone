@@ -35,6 +35,10 @@ module px4_msgs {
       float rho;
 
       @verbatim (language="comment", text=
+        "equivalent airspeed to true airspeed conversion factor")
+      float eas2tas;
+
+      @verbatim (language="comment", text=
         "Calibration changed counter. Monotonically increases whenever calibration changes.")
       uint8 calibration_count;
     };

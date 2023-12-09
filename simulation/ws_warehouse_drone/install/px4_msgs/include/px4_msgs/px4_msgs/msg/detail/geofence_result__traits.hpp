@@ -32,31 +32,31 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: geofence_violation_reason
+  // member: geofence_max_dist_triggered
   {
-    out << "geofence_violation_reason: ";
-    rosidl_generator_traits::value_to_yaml(msg.geofence_violation_reason, out);
+    out << "geofence_max_dist_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_max_dist_triggered, out);
     out << ", ";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_max_alt_triggered
   {
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_max_alt_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_max_alt_triggered, out);
     out << ", ";
   }
 
-  // member: primary_geofence_action
+  // member: geofence_custom_fence_triggered
   {
-    out << "primary_geofence_action: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_action, out);
+    out << "geofence_custom_fence_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_custom_fence_triggered, out);
     out << ", ";
   }
 
-  // member: home_required
+  // member: geofence_action
   {
-    out << "home_required: ";
-    rosidl_generator_traits::value_to_yaml(msg.home_required, out);
+    out << "geofence_action: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_action, out);
   }
   out << "}";
 }  // NOLINT(readability/fn_size)
@@ -75,43 +75,43 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: geofence_violation_reason
+  // member: geofence_max_dist_triggered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "geofence_violation_reason: ";
-    rosidl_generator_traits::value_to_yaml(msg.geofence_violation_reason, out);
+    out << "geofence_max_dist_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_max_dist_triggered, out);
     out << "\n";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_max_alt_triggered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_max_alt_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_max_alt_triggered, out);
     out << "\n";
   }
 
-  // member: primary_geofence_action
+  // member: geofence_custom_fence_triggered
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "primary_geofence_action: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_action, out);
+    out << "geofence_custom_fence_triggered: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_custom_fence_triggered, out);
     out << "\n";
   }
 
-  // member: home_required
+  // member: geofence_action
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "home_required: ";
-    rosidl_generator_traits::value_to_yaml(msg.home_required, out);
+    out << "geofence_action: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_action, out);
     out << "\n";
   }
 }  // NOLINT(readability/fn_size)

@@ -197,16 +197,48 @@ private:
   ::px4_msgs::msg::MissionResult msg_;
 };
 
-class Init_MissionResult_instance_count
+class Init_MissionResult_home_position_counter
 {
 public:
-  explicit Init_MissionResult_instance_count(::px4_msgs::msg::MissionResult & msg)
+  explicit Init_MissionResult_home_position_counter(::px4_msgs::msg::MissionResult & msg)
   : msg_(msg)
   {}
-  Init_MissionResult_seq_reached instance_count(::px4_msgs::msg::MissionResult::_instance_count_type arg)
+  Init_MissionResult_seq_reached home_position_counter(::px4_msgs::msg::MissionResult::_home_position_counter_type arg)
   {
-    msg_.instance_count = std::move(arg);
+    msg_.home_position_counter = std::move(arg);
     return Init_MissionResult_seq_reached(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::MissionResult msg_;
+};
+
+class Init_MissionResult_geofence_update_counter
+{
+public:
+  explicit Init_MissionResult_geofence_update_counter(::px4_msgs::msg::MissionResult & msg)
+  : msg_(msg)
+  {}
+  Init_MissionResult_home_position_counter geofence_update_counter(::px4_msgs::msg::MissionResult::_geofence_update_counter_type arg)
+  {
+    msg_.geofence_update_counter = std::move(arg);
+    return Init_MissionResult_home_position_counter(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::MissionResult msg_;
+};
+
+class Init_MissionResult_mission_update_counter
+{
+public:
+  explicit Init_MissionResult_mission_update_counter(::px4_msgs::msg::MissionResult & msg)
+  : msg_(msg)
+  {}
+  Init_MissionResult_geofence_update_counter mission_update_counter(::px4_msgs::msg::MissionResult::_mission_update_counter_type arg)
+  {
+    msg_.mission_update_counter = std::move(arg);
+    return Init_MissionResult_geofence_update_counter(msg_);
   }
 
 private:
@@ -219,10 +251,10 @@ public:
   Init_MissionResult_timestamp()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_MissionResult_instance_count timestamp(::px4_msgs::msg::MissionResult::_timestamp_type arg)
+  Init_MissionResult_mission_update_counter timestamp(::px4_msgs::msg::MissionResult::_timestamp_type arg)
   {
     msg_.timestamp = std::move(arg);
-    return Init_MissionResult_instance_count(msg_);
+    return Init_MissionResult_mission_update_counter(msg_);
   }
 
 private:

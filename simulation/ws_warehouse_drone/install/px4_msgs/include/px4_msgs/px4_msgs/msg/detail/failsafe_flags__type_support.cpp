@@ -532,14 +532,14 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FailsafeFlags
     nullptr  // resize(index) function pointer
   },
   {
-    "primary_geofence_breached",  // name
+    "geofence_breached",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::FailsafeFlags, primary_geofence_breached),  // bytes offset in struct
+    offsetof(px4_msgs::msg::FailsafeFlags, geofence_breached),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer

@@ -21,15 +21,15 @@ namespace msg
 namespace builder
 {
 
-class Init_VehicleControlMode_flag_control_allocation_enabled
+class Init_VehicleControlMode_source_id
 {
 public:
-  explicit Init_VehicleControlMode_flag_control_allocation_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  explicit Init_VehicleControlMode_source_id(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  ::px4_msgs::msg::VehicleControlMode flag_control_allocation_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_allocation_enabled_type arg)
+  ::px4_msgs::msg::VehicleControlMode source_id(::px4_msgs::msg::VehicleControlMode::_source_id_type arg)
   {
-    msg_.flag_control_allocation_enabled = std::move(arg);
+    msg_.source_id = std::move(arg);
     return std::move(msg_);
   }
 
@@ -43,10 +43,74 @@ public:
   explicit Init_VehicleControlMode_flag_control_termination_enabled(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  Init_VehicleControlMode_flag_control_allocation_enabled flag_control_termination_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_termination_enabled_type arg)
+  Init_VehicleControlMode_source_id flag_control_termination_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_termination_enabled_type arg)
   {
     msg_.flag_control_termination_enabled = std::move(arg);
+    return Init_VehicleControlMode_source_id(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleControlMode msg_;
+};
+
+class Init_VehicleControlMode_flag_control_allocation_enabled
+{
+public:
+  explicit Init_VehicleControlMode_flag_control_allocation_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleControlMode_flag_control_termination_enabled flag_control_allocation_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_allocation_enabled_type arg)
+  {
+    msg_.flag_control_allocation_enabled = std::move(arg);
+    return Init_VehicleControlMode_flag_control_termination_enabled(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleControlMode msg_;
+};
+
+class Init_VehicleControlMode_flag_control_rates_enabled
+{
+public:
+  explicit Init_VehicleControlMode_flag_control_rates_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleControlMode_flag_control_allocation_enabled flag_control_rates_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_rates_enabled_type arg)
+  {
+    msg_.flag_control_rates_enabled = std::move(arg);
     return Init_VehicleControlMode_flag_control_allocation_enabled(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleControlMode msg_;
+};
+
+class Init_VehicleControlMode_flag_control_attitude_enabled
+{
+public:
+  explicit Init_VehicleControlMode_flag_control_attitude_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleControlMode_flag_control_rates_enabled flag_control_attitude_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_attitude_enabled_type arg)
+  {
+    msg_.flag_control_attitude_enabled = std::move(arg);
+    return Init_VehicleControlMode_flag_control_rates_enabled(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleControlMode msg_;
+};
+
+class Init_VehicleControlMode_flag_control_acceleration_enabled
+{
+public:
+  explicit Init_VehicleControlMode_flag_control_acceleration_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleControlMode_flag_control_attitude_enabled flag_control_acceleration_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_acceleration_enabled_type arg)
+  {
+    msg_.flag_control_acceleration_enabled = std::move(arg);
+    return Init_VehicleControlMode_flag_control_attitude_enabled(msg_);
   }
 
 private:
@@ -59,10 +123,10 @@ public:
   explicit Init_VehicleControlMode_flag_control_climb_rate_enabled(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  Init_VehicleControlMode_flag_control_termination_enabled flag_control_climb_rate_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_climb_rate_enabled_type arg)
+  Init_VehicleControlMode_flag_control_acceleration_enabled flag_control_climb_rate_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_climb_rate_enabled_type arg)
   {
     msg_.flag_control_climb_rate_enabled = std::move(arg);
-    return Init_VehicleControlMode_flag_control_termination_enabled(msg_);
+    return Init_VehicleControlMode_flag_control_acceleration_enabled(msg_);
   }
 
 private:
@@ -85,15 +149,15 @@ private:
   ::px4_msgs::msg::VehicleControlMode msg_;
 };
 
-class Init_VehicleControlMode_flag_control_position_enabled
+class Init_VehicleControlMode_flag_control_velocity_enabled
 {
 public:
-  explicit Init_VehicleControlMode_flag_control_position_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  explicit Init_VehicleControlMode_flag_control_velocity_enabled(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  Init_VehicleControlMode_flag_control_altitude_enabled flag_control_position_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_position_enabled_type arg)
+  Init_VehicleControlMode_flag_control_altitude_enabled flag_control_velocity_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_velocity_enabled_type arg)
   {
-    msg_.flag_control_position_enabled = std::move(arg);
+    msg_.flag_control_velocity_enabled = std::move(arg);
     return Init_VehicleControlMode_flag_control_altitude_enabled(msg_);
   }
 
@@ -101,64 +165,16 @@ private:
   ::px4_msgs::msg::VehicleControlMode msg_;
 };
 
-class Init_VehicleControlMode_flag_control_velocity_enabled
+class Init_VehicleControlMode_flag_control_position_enabled
 {
 public:
-  explicit Init_VehicleControlMode_flag_control_velocity_enabled(::px4_msgs::msg::VehicleControlMode & msg)
+  explicit Init_VehicleControlMode_flag_control_position_enabled(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  Init_VehicleControlMode_flag_control_position_enabled flag_control_velocity_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_velocity_enabled_type arg)
+  Init_VehicleControlMode_flag_control_velocity_enabled flag_control_position_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_position_enabled_type arg)
   {
-    msg_.flag_control_velocity_enabled = std::move(arg);
-    return Init_VehicleControlMode_flag_control_position_enabled(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::VehicleControlMode msg_;
-};
-
-class Init_VehicleControlMode_flag_control_acceleration_enabled
-{
-public:
-  explicit Init_VehicleControlMode_flag_control_acceleration_enabled(::px4_msgs::msg::VehicleControlMode & msg)
-  : msg_(msg)
-  {}
-  Init_VehicleControlMode_flag_control_velocity_enabled flag_control_acceleration_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_acceleration_enabled_type arg)
-  {
-    msg_.flag_control_acceleration_enabled = std::move(arg);
+    msg_.flag_control_position_enabled = std::move(arg);
     return Init_VehicleControlMode_flag_control_velocity_enabled(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::VehicleControlMode msg_;
-};
-
-class Init_VehicleControlMode_flag_control_attitude_enabled
-{
-public:
-  explicit Init_VehicleControlMode_flag_control_attitude_enabled(::px4_msgs::msg::VehicleControlMode & msg)
-  : msg_(msg)
-  {}
-  Init_VehicleControlMode_flag_control_acceleration_enabled flag_control_attitude_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_attitude_enabled_type arg)
-  {
-    msg_.flag_control_attitude_enabled = std::move(arg);
-    return Init_VehicleControlMode_flag_control_acceleration_enabled(msg_);
-  }
-
-private:
-  ::px4_msgs::msg::VehicleControlMode msg_;
-};
-
-class Init_VehicleControlMode_flag_control_rates_enabled
-{
-public:
-  explicit Init_VehicleControlMode_flag_control_rates_enabled(::px4_msgs::msg::VehicleControlMode & msg)
-  : msg_(msg)
-  {}
-  Init_VehicleControlMode_flag_control_attitude_enabled flag_control_rates_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_rates_enabled_type arg)
-  {
-    msg_.flag_control_rates_enabled = std::move(arg);
-    return Init_VehicleControlMode_flag_control_attitude_enabled(msg_);
   }
 
 private:
@@ -171,10 +187,10 @@ public:
   explicit Init_VehicleControlMode_flag_control_offboard_enabled(::px4_msgs::msg::VehicleControlMode & msg)
   : msg_(msg)
   {}
-  Init_VehicleControlMode_flag_control_rates_enabled flag_control_offboard_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_offboard_enabled_type arg)
+  Init_VehicleControlMode_flag_control_position_enabled flag_control_offboard_enabled(::px4_msgs::msg::VehicleControlMode::_flag_control_offboard_enabled_type arg)
   {
     msg_.flag_control_offboard_enabled = std::move(arg);
-    return Init_VehicleControlMode_flag_control_rates_enabled(msg_);
+    return Init_VehicleControlMode_flag_control_position_enabled(msg_);
   }
 
 private:

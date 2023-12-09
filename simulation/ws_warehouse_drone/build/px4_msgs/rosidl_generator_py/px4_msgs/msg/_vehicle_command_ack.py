@@ -188,7 +188,7 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
         'result_param1': 'uint8',
         'result_param2': 'int32',
         'target_system': 'uint8',
-        'target_component': 'uint8',
+        'target_component': 'uint16',
         'from_external': 'boolean',
     }
 
@@ -199,7 +199,7 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
         rosidl_parser.definition.BasicType('int32'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint16'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
     )
 
@@ -369,8 +369,8 @@ class VehicleCommandAck(metaclass=Metaclass_VehicleCommandAck):
             assert \
                 isinstance(value, int), \
                 "The 'target_component' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'target_component' field must be an unsigned integer in [0, 255]"
+            assert value >= 0 and value < 65536, \
+                "The 'target_component' field must be an unsigned integer in [0, 65535]"
         self._target_component = value
 
     @builtins.property

@@ -114,8 +114,8 @@ module px4_msgs {
 
       @verbatim (language="comment", text=
         "Other" "\n"
-        "Primary Geofence breached")
-      boolean primary_geofence_breached;
+        "Geofence breached (one or multiple)")
+      boolean geofence_breached;
 
       @verbatim (language="comment", text=
         "Mission failure")

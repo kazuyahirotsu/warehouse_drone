@@ -159,9 +159,9 @@ static bool _TecsStatus__cdr_serialize(
     cdr << ros_message->throttle_trim;
   }
 
-  // Field name: mode
+  // Field name: underspeed_ratio
   {
-    cdr << ros_message->mode;
+    cdr << ros_message->underspeed_ratio;
   }
 
   return true;
@@ -286,9 +286,9 @@ static bool _TecsStatus__cdr_deserialize(
     cdr >> ros_message->throttle_trim;
   }
 
-  // Field name: mode
+  // Field name: underspeed_ratio
   {
-    cdr >> ros_message->mode;
+    cdr >> ros_message->underspeed_ratio;
   }
 
   return true;
@@ -440,9 +440,9 @@ size_t get_serialized_size_px4_msgs__msg__TecsStatus(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name mode
+  // field.name underspeed_ratio
   {
-    size_t item_size = sizeof(ros_message->mode);
+    size_t item_size = sizeof(ros_message->underspeed_ratio);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -467,6 +467,8 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -477,6 +479,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -484,6 +487,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -491,6 +495,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -498,6 +503,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -505,6 +511,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -512,6 +519,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -519,6 +527,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -526,6 +535,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -533,6 +543,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -540,6 +551,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -547,6 +559,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -554,6 +567,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -561,6 +575,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -568,6 +583,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -575,6 +591,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -582,6 +599,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -589,6 +607,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -596,6 +615,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -603,6 +623,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -610,6 +631,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -617,6 +639,7 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -624,17 +647,33 @@ size_t max_serialized_size_px4_msgs__msg__TecsStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
-  // member: mode
+  // member: underspeed_ratio
   {
     size_t array_size = 1;
 
-    current_alignment += array_size * sizeof(uint8_t);
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__TecsStatus;
+    is_plain =
+      (
+      offsetof(DataType, underspeed_ratio) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _TecsStatus__max_serialized_size(char & bounds_info)

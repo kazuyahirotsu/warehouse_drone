@@ -32,10 +32,24 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: instance_count
+  // member: mission_update_counter
   {
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
+    out << "mission_update_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_update_counter, out);
+    out << ", ";
+  }
+
+  // member: geofence_update_counter
+  {
+    out << "geofence_update_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_update_counter, out);
+    out << ", ";
+  }
+
+  // member: home_position_counter
+  {
+    out << "home_position_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.home_position_counter, out);
     out << ", ";
   }
 
@@ -131,13 +145,33 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: instance_count
+  // member: mission_update_counter
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "instance_count: ";
-    rosidl_generator_traits::value_to_yaml(msg.instance_count, out);
+    out << "mission_update_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.mission_update_counter, out);
+    out << "\n";
+  }
+
+  // member: geofence_update_counter
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "geofence_update_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_update_counter, out);
+    out << "\n";
+  }
+
+  // member: home_position_counter
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "home_position_counter: ";
+    rosidl_generator_traits::value_to_yaml(msg.home_position_counter, out);
     out << "\n";
   }
 

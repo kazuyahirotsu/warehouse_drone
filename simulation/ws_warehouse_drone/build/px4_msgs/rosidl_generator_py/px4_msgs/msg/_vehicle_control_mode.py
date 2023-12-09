@@ -61,15 +61,16 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         '_flag_control_manual_enabled',
         '_flag_control_auto_enabled',
         '_flag_control_offboard_enabled',
-        '_flag_control_rates_enabled',
-        '_flag_control_attitude_enabled',
-        '_flag_control_acceleration_enabled',
-        '_flag_control_velocity_enabled',
         '_flag_control_position_enabled',
+        '_flag_control_velocity_enabled',
         '_flag_control_altitude_enabled',
         '_flag_control_climb_rate_enabled',
-        '_flag_control_termination_enabled',
+        '_flag_control_acceleration_enabled',
+        '_flag_control_attitude_enabled',
+        '_flag_control_rates_enabled',
         '_flag_control_allocation_enabled',
+        '_flag_control_termination_enabled',
+        '_source_id',
     ]
 
     _fields_and_field_types = {
@@ -79,15 +80,16 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         'flag_control_manual_enabled': 'boolean',
         'flag_control_auto_enabled': 'boolean',
         'flag_control_offboard_enabled': 'boolean',
-        'flag_control_rates_enabled': 'boolean',
-        'flag_control_attitude_enabled': 'boolean',
-        'flag_control_acceleration_enabled': 'boolean',
-        'flag_control_velocity_enabled': 'boolean',
         'flag_control_position_enabled': 'boolean',
+        'flag_control_velocity_enabled': 'boolean',
         'flag_control_altitude_enabled': 'boolean',
         'flag_control_climb_rate_enabled': 'boolean',
-        'flag_control_termination_enabled': 'boolean',
+        'flag_control_acceleration_enabled': 'boolean',
+        'flag_control_attitude_enabled': 'boolean',
+        'flag_control_rates_enabled': 'boolean',
         'flag_control_allocation_enabled': 'boolean',
+        'flag_control_termination_enabled': 'boolean',
+        'source_id': 'uint8',
     }
 
     SLOT_TYPES = (
@@ -106,6 +108,7 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -118,15 +121,16 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         self.flag_control_manual_enabled = kwargs.get('flag_control_manual_enabled', bool())
         self.flag_control_auto_enabled = kwargs.get('flag_control_auto_enabled', bool())
         self.flag_control_offboard_enabled = kwargs.get('flag_control_offboard_enabled', bool())
-        self.flag_control_rates_enabled = kwargs.get('flag_control_rates_enabled', bool())
-        self.flag_control_attitude_enabled = kwargs.get('flag_control_attitude_enabled', bool())
-        self.flag_control_acceleration_enabled = kwargs.get('flag_control_acceleration_enabled', bool())
-        self.flag_control_velocity_enabled = kwargs.get('flag_control_velocity_enabled', bool())
         self.flag_control_position_enabled = kwargs.get('flag_control_position_enabled', bool())
+        self.flag_control_velocity_enabled = kwargs.get('flag_control_velocity_enabled', bool())
         self.flag_control_altitude_enabled = kwargs.get('flag_control_altitude_enabled', bool())
         self.flag_control_climb_rate_enabled = kwargs.get('flag_control_climb_rate_enabled', bool())
-        self.flag_control_termination_enabled = kwargs.get('flag_control_termination_enabled', bool())
+        self.flag_control_acceleration_enabled = kwargs.get('flag_control_acceleration_enabled', bool())
+        self.flag_control_attitude_enabled = kwargs.get('flag_control_attitude_enabled', bool())
+        self.flag_control_rates_enabled = kwargs.get('flag_control_rates_enabled', bool())
         self.flag_control_allocation_enabled = kwargs.get('flag_control_allocation_enabled', bool())
+        self.flag_control_termination_enabled = kwargs.get('flag_control_termination_enabled', bool())
+        self.source_id = kwargs.get('source_id', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -169,23 +173,25 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
             return False
         if self.flag_control_offboard_enabled != other.flag_control_offboard_enabled:
             return False
-        if self.flag_control_rates_enabled != other.flag_control_rates_enabled:
-            return False
-        if self.flag_control_attitude_enabled != other.flag_control_attitude_enabled:
-            return False
-        if self.flag_control_acceleration_enabled != other.flag_control_acceleration_enabled:
+        if self.flag_control_position_enabled != other.flag_control_position_enabled:
             return False
         if self.flag_control_velocity_enabled != other.flag_control_velocity_enabled:
-            return False
-        if self.flag_control_position_enabled != other.flag_control_position_enabled:
             return False
         if self.flag_control_altitude_enabled != other.flag_control_altitude_enabled:
             return False
         if self.flag_control_climb_rate_enabled != other.flag_control_climb_rate_enabled:
             return False
-        if self.flag_control_termination_enabled != other.flag_control_termination_enabled:
+        if self.flag_control_acceleration_enabled != other.flag_control_acceleration_enabled:
+            return False
+        if self.flag_control_attitude_enabled != other.flag_control_attitude_enabled:
+            return False
+        if self.flag_control_rates_enabled != other.flag_control_rates_enabled:
             return False
         if self.flag_control_allocation_enabled != other.flag_control_allocation_enabled:
+            return False
+        if self.flag_control_termination_enabled != other.flag_control_termination_enabled:
+            return False
+        if self.source_id != other.source_id:
             return False
         return True
 
@@ -275,43 +281,17 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         self._flag_control_offboard_enabled = value
 
     @builtins.property
-    def flag_control_rates_enabled(self):
-        """Message field 'flag_control_rates_enabled'."""
-        return self._flag_control_rates_enabled
+    def flag_control_position_enabled(self):
+        """Message field 'flag_control_position_enabled'."""
+        return self._flag_control_position_enabled
 
-    @flag_control_rates_enabled.setter
-    def flag_control_rates_enabled(self, value):
+    @flag_control_position_enabled.setter
+    def flag_control_position_enabled(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'flag_control_rates_enabled' field must be of type 'bool'"
-        self._flag_control_rates_enabled = value
-
-    @builtins.property
-    def flag_control_attitude_enabled(self):
-        """Message field 'flag_control_attitude_enabled'."""
-        return self._flag_control_attitude_enabled
-
-    @flag_control_attitude_enabled.setter
-    def flag_control_attitude_enabled(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'flag_control_attitude_enabled' field must be of type 'bool'"
-        self._flag_control_attitude_enabled = value
-
-    @builtins.property
-    def flag_control_acceleration_enabled(self):
-        """Message field 'flag_control_acceleration_enabled'."""
-        return self._flag_control_acceleration_enabled
-
-    @flag_control_acceleration_enabled.setter
-    def flag_control_acceleration_enabled(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'flag_control_acceleration_enabled' field must be of type 'bool'"
-        self._flag_control_acceleration_enabled = value
+                "The 'flag_control_position_enabled' field must be of type 'bool'"
+        self._flag_control_position_enabled = value
 
     @builtins.property
     def flag_control_velocity_enabled(self):
@@ -325,19 +305,6 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
                 isinstance(value, bool), \
                 "The 'flag_control_velocity_enabled' field must be of type 'bool'"
         self._flag_control_velocity_enabled = value
-
-    @builtins.property
-    def flag_control_position_enabled(self):
-        """Message field 'flag_control_position_enabled'."""
-        return self._flag_control_position_enabled
-
-    @flag_control_position_enabled.setter
-    def flag_control_position_enabled(self, value):
-        if __debug__:
-            assert \
-                isinstance(value, bool), \
-                "The 'flag_control_position_enabled' field must be of type 'bool'"
-        self._flag_control_position_enabled = value
 
     @builtins.property
     def flag_control_altitude_enabled(self):
@@ -366,17 +333,43 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
         self._flag_control_climb_rate_enabled = value
 
     @builtins.property
-    def flag_control_termination_enabled(self):
-        """Message field 'flag_control_termination_enabled'."""
-        return self._flag_control_termination_enabled
+    def flag_control_acceleration_enabled(self):
+        """Message field 'flag_control_acceleration_enabled'."""
+        return self._flag_control_acceleration_enabled
 
-    @flag_control_termination_enabled.setter
-    def flag_control_termination_enabled(self, value):
+    @flag_control_acceleration_enabled.setter
+    def flag_control_acceleration_enabled(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'flag_control_termination_enabled' field must be of type 'bool'"
-        self._flag_control_termination_enabled = value
+                "The 'flag_control_acceleration_enabled' field must be of type 'bool'"
+        self._flag_control_acceleration_enabled = value
+
+    @builtins.property
+    def flag_control_attitude_enabled(self):
+        """Message field 'flag_control_attitude_enabled'."""
+        return self._flag_control_attitude_enabled
+
+    @flag_control_attitude_enabled.setter
+    def flag_control_attitude_enabled(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'flag_control_attitude_enabled' field must be of type 'bool'"
+        self._flag_control_attitude_enabled = value
+
+    @builtins.property
+    def flag_control_rates_enabled(self):
+        """Message field 'flag_control_rates_enabled'."""
+        return self._flag_control_rates_enabled
+
+    @flag_control_rates_enabled.setter
+    def flag_control_rates_enabled(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'flag_control_rates_enabled' field must be of type 'bool'"
+        self._flag_control_rates_enabled = value
 
     @builtins.property
     def flag_control_allocation_enabled(self):
@@ -390,3 +383,31 @@ class VehicleControlMode(metaclass=Metaclass_VehicleControlMode):
                 isinstance(value, bool), \
                 "The 'flag_control_allocation_enabled' field must be of type 'bool'"
         self._flag_control_allocation_enabled = value
+
+    @builtins.property
+    def flag_control_termination_enabled(self):
+        """Message field 'flag_control_termination_enabled'."""
+        return self._flag_control_termination_enabled
+
+    @flag_control_termination_enabled.setter
+    def flag_control_termination_enabled(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, bool), \
+                "The 'flag_control_termination_enabled' field must be of type 'bool'"
+        self._flag_control_termination_enabled = value
+
+    @builtins.property
+    def source_id(self):
+        """Message field 'source_id'."""
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'source_id' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'source_id' field must be an unsigned integer in [0, 255]"
+        self._source_id = value

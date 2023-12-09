@@ -44,15 +44,16 @@ struct VehicleControlMode_
       this->flag_control_manual_enabled = false;
       this->flag_control_auto_enabled = false;
       this->flag_control_offboard_enabled = false;
-      this->flag_control_rates_enabled = false;
-      this->flag_control_attitude_enabled = false;
-      this->flag_control_acceleration_enabled = false;
-      this->flag_control_velocity_enabled = false;
       this->flag_control_position_enabled = false;
+      this->flag_control_velocity_enabled = false;
       this->flag_control_altitude_enabled = false;
       this->flag_control_climb_rate_enabled = false;
-      this->flag_control_termination_enabled = false;
+      this->flag_control_acceleration_enabled = false;
+      this->flag_control_attitude_enabled = false;
+      this->flag_control_rates_enabled = false;
       this->flag_control_allocation_enabled = false;
+      this->flag_control_termination_enabled = false;
+      this->source_id = 0;
     }
   }
 
@@ -68,15 +69,16 @@ struct VehicleControlMode_
       this->flag_control_manual_enabled = false;
       this->flag_control_auto_enabled = false;
       this->flag_control_offboard_enabled = false;
-      this->flag_control_rates_enabled = false;
-      this->flag_control_attitude_enabled = false;
-      this->flag_control_acceleration_enabled = false;
-      this->flag_control_velocity_enabled = false;
       this->flag_control_position_enabled = false;
+      this->flag_control_velocity_enabled = false;
       this->flag_control_altitude_enabled = false;
       this->flag_control_climb_rate_enabled = false;
-      this->flag_control_termination_enabled = false;
+      this->flag_control_acceleration_enabled = false;
+      this->flag_control_attitude_enabled = false;
+      this->flag_control_rates_enabled = false;
       this->flag_control_allocation_enabled = false;
+      this->flag_control_termination_enabled = false;
+      this->source_id = 0;
     }
   }
 
@@ -99,33 +101,36 @@ struct VehicleControlMode_
   using _flag_control_offboard_enabled_type =
     bool;
   _flag_control_offboard_enabled_type flag_control_offboard_enabled;
-  using _flag_control_rates_enabled_type =
-    bool;
-  _flag_control_rates_enabled_type flag_control_rates_enabled;
-  using _flag_control_attitude_enabled_type =
-    bool;
-  _flag_control_attitude_enabled_type flag_control_attitude_enabled;
-  using _flag_control_acceleration_enabled_type =
-    bool;
-  _flag_control_acceleration_enabled_type flag_control_acceleration_enabled;
-  using _flag_control_velocity_enabled_type =
-    bool;
-  _flag_control_velocity_enabled_type flag_control_velocity_enabled;
   using _flag_control_position_enabled_type =
     bool;
   _flag_control_position_enabled_type flag_control_position_enabled;
+  using _flag_control_velocity_enabled_type =
+    bool;
+  _flag_control_velocity_enabled_type flag_control_velocity_enabled;
   using _flag_control_altitude_enabled_type =
     bool;
   _flag_control_altitude_enabled_type flag_control_altitude_enabled;
   using _flag_control_climb_rate_enabled_type =
     bool;
   _flag_control_climb_rate_enabled_type flag_control_climb_rate_enabled;
-  using _flag_control_termination_enabled_type =
+  using _flag_control_acceleration_enabled_type =
     bool;
-  _flag_control_termination_enabled_type flag_control_termination_enabled;
+  _flag_control_acceleration_enabled_type flag_control_acceleration_enabled;
+  using _flag_control_attitude_enabled_type =
+    bool;
+  _flag_control_attitude_enabled_type flag_control_attitude_enabled;
+  using _flag_control_rates_enabled_type =
+    bool;
+  _flag_control_rates_enabled_type flag_control_rates_enabled;
   using _flag_control_allocation_enabled_type =
     bool;
   _flag_control_allocation_enabled_type flag_control_allocation_enabled;
+  using _flag_control_termination_enabled_type =
+    bool;
+  _flag_control_termination_enabled_type flag_control_termination_enabled;
+  using _source_id_type =
+    uint8_t;
+  _source_id_type source_id;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -164,34 +169,16 @@ struct VehicleControlMode_
     this->flag_control_offboard_enabled = _arg;
     return *this;
   }
-  Type & set__flag_control_rates_enabled(
+  Type & set__flag_control_position_enabled(
     const bool & _arg)
   {
-    this->flag_control_rates_enabled = _arg;
-    return *this;
-  }
-  Type & set__flag_control_attitude_enabled(
-    const bool & _arg)
-  {
-    this->flag_control_attitude_enabled = _arg;
-    return *this;
-  }
-  Type & set__flag_control_acceleration_enabled(
-    const bool & _arg)
-  {
-    this->flag_control_acceleration_enabled = _arg;
+    this->flag_control_position_enabled = _arg;
     return *this;
   }
   Type & set__flag_control_velocity_enabled(
     const bool & _arg)
   {
     this->flag_control_velocity_enabled = _arg;
-    return *this;
-  }
-  Type & set__flag_control_position_enabled(
-    const bool & _arg)
-  {
-    this->flag_control_position_enabled = _arg;
     return *this;
   }
   Type & set__flag_control_altitude_enabled(
@@ -206,16 +193,40 @@ struct VehicleControlMode_
     this->flag_control_climb_rate_enabled = _arg;
     return *this;
   }
-  Type & set__flag_control_termination_enabled(
+  Type & set__flag_control_acceleration_enabled(
     const bool & _arg)
   {
-    this->flag_control_termination_enabled = _arg;
+    this->flag_control_acceleration_enabled = _arg;
+    return *this;
+  }
+  Type & set__flag_control_attitude_enabled(
+    const bool & _arg)
+  {
+    this->flag_control_attitude_enabled = _arg;
+    return *this;
+  }
+  Type & set__flag_control_rates_enabled(
+    const bool & _arg)
+  {
+    this->flag_control_rates_enabled = _arg;
     return *this;
   }
   Type & set__flag_control_allocation_enabled(
     const bool & _arg)
   {
     this->flag_control_allocation_enabled = _arg;
+    return *this;
+  }
+  Type & set__flag_control_termination_enabled(
+    const bool & _arg)
+  {
+    this->flag_control_termination_enabled = _arg;
+    return *this;
+  }
+  Type & set__source_id(
+    const uint8_t & _arg)
+  {
+    this->source_id = _arg;
     return *this;
   }
 
@@ -279,19 +290,10 @@ struct VehicleControlMode_
     if (this->flag_control_offboard_enabled != other.flag_control_offboard_enabled) {
       return false;
     }
-    if (this->flag_control_rates_enabled != other.flag_control_rates_enabled) {
-      return false;
-    }
-    if (this->flag_control_attitude_enabled != other.flag_control_attitude_enabled) {
-      return false;
-    }
-    if (this->flag_control_acceleration_enabled != other.flag_control_acceleration_enabled) {
+    if (this->flag_control_position_enabled != other.flag_control_position_enabled) {
       return false;
     }
     if (this->flag_control_velocity_enabled != other.flag_control_velocity_enabled) {
-      return false;
-    }
-    if (this->flag_control_position_enabled != other.flag_control_position_enabled) {
       return false;
     }
     if (this->flag_control_altitude_enabled != other.flag_control_altitude_enabled) {
@@ -300,10 +302,22 @@ struct VehicleControlMode_
     if (this->flag_control_climb_rate_enabled != other.flag_control_climb_rate_enabled) {
       return false;
     }
-    if (this->flag_control_termination_enabled != other.flag_control_termination_enabled) {
+    if (this->flag_control_acceleration_enabled != other.flag_control_acceleration_enabled) {
+      return false;
+    }
+    if (this->flag_control_attitude_enabled != other.flag_control_attitude_enabled) {
+      return false;
+    }
+    if (this->flag_control_rates_enabled != other.flag_control_rates_enabled) {
       return false;
     }
     if (this->flag_control_allocation_enabled != other.flag_control_allocation_enabled) {
+      return false;
+    }
+    if (this->flag_control_termination_enabled != other.flag_control_termination_enabled) {
+      return false;
+    }
+    if (this->source_id != other.source_id) {
       return false;
     }
     return true;

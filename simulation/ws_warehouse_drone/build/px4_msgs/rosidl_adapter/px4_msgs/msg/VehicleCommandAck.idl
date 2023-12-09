@@ -65,7 +65,9 @@ module px4_msgs {
 
       uint8 target_system;
 
-      uint8 target_component;
+      @verbatim (language="comment", text=
+        "Target component / mode executor")
+      uint16 target_component;
 
       @verbatim (language="comment", text=
         "Indicates if the command came from an external source")

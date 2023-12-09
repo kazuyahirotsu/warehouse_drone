@@ -22,8 +22,6 @@ class Metaclass_TecsStatus(type):
     _TYPE_SUPPORT = None
 
     __constants = {
-        'TECS_MODE_NORMAL': 0,
-        'TECS_MODE_UNDERSPEED': 1,
     }
 
     @classmethod
@@ -52,29 +50,11 @@ class Metaclass_TecsStatus(type):
         # the message class under "Data and other attributes defined here:"
         # as well as populate each message instance
         return {
-            'TECS_MODE_NORMAL': cls.__constants['TECS_MODE_NORMAL'],
-            'TECS_MODE_UNDERSPEED': cls.__constants['TECS_MODE_UNDERSPEED'],
         }
-
-    @property
-    def TECS_MODE_NORMAL(self):
-        """Message constant 'TECS_MODE_NORMAL'."""
-        return Metaclass_TecsStatus.__constants['TECS_MODE_NORMAL']
-
-    @property
-    def TECS_MODE_UNDERSPEED(self):
-        """Message constant 'TECS_MODE_UNDERSPEED'."""
-        return Metaclass_TecsStatus.__constants['TECS_MODE_UNDERSPEED']
 
 
 class TecsStatus(metaclass=Metaclass_TecsStatus):
-    """
-    Message class 'TecsStatus'.
-
-    Constants:
-      TECS_MODE_NORMAL
-      TECS_MODE_UNDERSPEED
-    """
+    """Message class 'TecsStatus'."""
 
     __slots__ = [
         '_timestamp',
@@ -99,7 +79,7 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
         '_throttle_sp',
         '_pitch_sp_rad',
         '_throttle_trim',
-        '_mode',
+        '_underspeed_ratio',
     ]
 
     _fields_and_field_types = {
@@ -125,7 +105,7 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
         'throttle_sp': 'float',
         'pitch_sp_rad': 'float',
         'throttle_trim': 'float',
-        'mode': 'uint8',
+        'underspeed_ratio': 'float',
     }
 
     SLOT_TYPES = (
@@ -151,7 +131,7 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
-        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -180,7 +160,7 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
         self.throttle_sp = kwargs.get('throttle_sp', float())
         self.pitch_sp_rad = kwargs.get('pitch_sp_rad', float())
         self.throttle_trim = kwargs.get('throttle_trim', float())
-        self.mode = kwargs.get('mode', int())
+        self.underspeed_ratio = kwargs.get('underspeed_ratio', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -255,7 +235,7 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
             return False
         if self.throttle_trim != other.throttle_trim:
             return False
-        if self.mode != other.mode:
+        if self.underspeed_ratio != other.underspeed_ratio:
             return False
         return True
 
@@ -595,16 +575,16 @@ class TecsStatus(metaclass=Metaclass_TecsStatus):
         self._throttle_trim = value
 
     @builtins.property
-    def mode(self):
-        """Message field 'mode'."""
-        return self._mode
+    def underspeed_ratio(self):
+        """Message field 'underspeed_ratio'."""
+        return self._underspeed_ratio
 
-    @mode.setter
-    def mode(self, value):
+    @underspeed_ratio.setter
+    def underspeed_ratio(self, value):
         if __debug__:
             assert \
-                isinstance(value, int), \
-                "The 'mode' field must be of type 'int'"
-            assert value >= 0 and value < 256, \
-                "The 'mode' field must be an unsigned integer in [0, 255]"
-        self._mode = value
+                isinstance(value, float), \
+                "The 'underspeed_ratio' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'underspeed_ratio' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._underspeed_ratio = value

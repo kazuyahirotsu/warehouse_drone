@@ -526,14 +526,14 @@ static rosidl_typesupport_introspection_c__MessageMember px4_msgs__msg__Failsafe
     NULL  // resize(index) function pointer
   },
   {
-    "primary_geofence_breached",  // name
+    "geofence_breached",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs__msg__FailsafeFlags, primary_geofence_breached),  // bytes offset in struct
+    offsetof(px4_msgs__msg__FailsafeFlags, geofence_breached),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

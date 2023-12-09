@@ -60,7 +60,7 @@ struct TecsStatus_
       this->throttle_sp = 0.0f;
       this->pitch_sp_rad = 0.0f;
       this->throttle_trim = 0.0f;
-      this->mode = 0;
+      this->underspeed_ratio = 0.0f;
     }
   }
 
@@ -92,7 +92,7 @@ struct TecsStatus_
       this->throttle_sp = 0.0f;
       this->pitch_sp_rad = 0.0f;
       this->throttle_trim = 0.0f;
-      this->mode = 0;
+      this->underspeed_ratio = 0.0f;
     }
   }
 
@@ -163,9 +163,9 @@ struct TecsStatus_
   using _throttle_trim_type =
     float;
   _throttle_trim_type throttle_trim;
-  using _mode_type =
-    uint8_t;
-  _mode_type mode;
+  using _underspeed_ratio_type =
+    float;
+  _underspeed_ratio_type underspeed_ratio;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -300,18 +300,14 @@ struct TecsStatus_
     this->throttle_trim = _arg;
     return *this;
   }
-  Type & set__mode(
-    const uint8_t & _arg)
+  Type & set__underspeed_ratio(
+    const float & _arg)
   {
-    this->mode = _arg;
+    this->underspeed_ratio = _arg;
     return *this;
   }
 
   // constant declarations
-  static constexpr uint8_t TECS_MODE_NORMAL =
-    0u;
-  static constexpr uint8_t TECS_MODE_UNDERSPEED =
-    1u;
 
   // pointer types
   using RawPtr =
@@ -419,7 +415,7 @@ struct TecsStatus_
     if (this->throttle_trim != other.throttle_trim) {
       return false;
     }
-    if (this->mode != other.mode) {
+    if (this->underspeed_ratio != other.underspeed_ratio) {
       return false;
     }
     return true;
@@ -435,16 +431,6 @@ using TecsStatus =
   px4_msgs::msg::TecsStatus_<std::allocator<void>>;
 
 // constant definitions
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t TecsStatus_<ContainerAllocator>::TECS_MODE_NORMAL;
-#endif  // __cplusplus < 201703L
-#if __cplusplus < 201703L
-// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
-template<typename ContainerAllocator>
-constexpr uint8_t TecsStatus_<ContainerAllocator>::TECS_MODE_UNDERSPEED;
-#endif  // __cplusplus < 201703L
 
 }  // namespace msg
 

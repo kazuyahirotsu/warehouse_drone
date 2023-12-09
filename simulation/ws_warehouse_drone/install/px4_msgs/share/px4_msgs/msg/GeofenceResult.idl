@@ -31,20 +31,20 @@ module px4_msgs {
       uint64 timestamp;
 
       @verbatim (language="comment", text=
-        "one of geofence_violation_reason_t::*")
-      uint8 geofence_violation_reason;
+        "true the check for max distance from Home is triggered")
+      boolean geofence_max_dist_triggered;
 
       @verbatim (language="comment", text=
-        "true if the primary geofence is breached")
-      boolean primary_geofence_breached;
+        "true the check for max altitude above Home is triggered")
+      boolean geofence_max_alt_triggered;
 
       @verbatim (language="comment", text=
-        "action to take when the primary geofence is breached")
-      uint8 primary_geofence_action;
+        "true the check for custom inclusion/exclusion geofence(s) is triggered")
+      boolean geofence_custom_fence_triggered;
 
       @verbatim (language="comment", text=
-        "true if the geofence requires a valid home position")
-      boolean home_required;
+        "action to take when the geofence is breached")
+      uint8 geofence_action;
     };
   };
 };

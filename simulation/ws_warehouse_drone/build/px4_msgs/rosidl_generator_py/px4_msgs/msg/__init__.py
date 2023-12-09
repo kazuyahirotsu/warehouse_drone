@@ -10,6 +10,8 @@ from px4_msgs.msg._adc_report import AdcReport  # noqa: F401
 from px4_msgs.msg._airspeed import Airspeed  # noqa: F401
 from px4_msgs.msg._airspeed_validated import AirspeedValidated  # noqa: F401
 from px4_msgs.msg._airspeed_wind import AirspeedWind  # noqa: F401
+from px4_msgs.msg._arming_check_reply import ArmingCheckReply  # noqa: F401
+from px4_msgs.msg._arming_check_request import ArmingCheckRequest  # noqa: F401
 from px4_msgs.msg._autotune_attitude_control_status import AutotuneAttitudeControlStatus  # noqa: F401
 from px4_msgs.msg._battery_status import BatteryStatus  # noqa: F401
 from px4_msgs.msg._button_event import ButtonEvent  # noqa: F401
@@ -19,6 +21,7 @@ from px4_msgs.msg._camera_trigger import CameraTrigger  # noqa: F401
 from px4_msgs.msg._cellular_status import CellularStatus  # noqa: F401
 from px4_msgs.msg._collision_constraints import CollisionConstraints  # noqa: F401
 from px4_msgs.msg._collision_report import CollisionReport  # noqa: F401
+from px4_msgs.msg._config_overrides import ConfigOverrides  # noqa: F401
 from px4_msgs.msg._control_allocator_status import ControlAllocatorStatus  # noqa: F401
 from px4_msgs.msg._cpuload import Cpuload  # noqa: F401
 from px4_msgs.msg._dataman_request import DatamanRequest  # noqa: F401
@@ -91,6 +94,8 @@ from px4_msgs.msg._manual_control_setpoint import ManualControlSetpoint  # noqa:
 from px4_msgs.msg._manual_control_switches import ManualControlSwitches  # noqa: F401
 from px4_msgs.msg._mavlink_log import MavlinkLog  # noqa: F401
 from px4_msgs.msg._mavlink_tunnel import MavlinkTunnel  # noqa: F401
+from px4_msgs.msg._message_format_request import MessageFormatRequest  # noqa: F401
+from px4_msgs.msg._message_format_response import MessageFormatResponse  # noqa: F401
 from px4_msgs.msg._mission import Mission  # noqa: F401
 from px4_msgs.msg._mission_result import MissionResult  # noqa: F401
 from px4_msgs.msg._mode_completed import ModeCompleted  # noqa: F401
@@ -122,6 +127,8 @@ from px4_msgs.msg._radio_status import RadioStatus  # noqa: F401
 from px4_msgs.msg._rate_ctrl_status import RateCtrlStatus  # noqa: F401
 from px4_msgs.msg._rc_channels import RcChannels  # noqa: F401
 from px4_msgs.msg._rc_parameter_map import RcParameterMap  # noqa: F401
+from px4_msgs.msg._register_ext_component_reply import RegisterExtComponentReply  # noqa: F401
+from px4_msgs.msg._register_ext_component_request import RegisterExtComponentRequest  # noqa: F401
 from px4_msgs.msg._rpm import Rpm  # noqa: F401
 from px4_msgs.msg._rtl_time_estimate import RtlTimeEstimate  # noqa: F401
 from px4_msgs.msg._satellite_info import SatelliteInfo  # noqa: F401
@@ -159,6 +166,7 @@ from px4_msgs.msg._uavcan_parameter_request import UavcanParameterRequest  # noq
 from px4_msgs.msg._uavcan_parameter_value import UavcanParameterValue  # noqa: F401
 from px4_msgs.msg._ulog_stream import UlogStream  # noqa: F401
 from px4_msgs.msg._ulog_stream_ack import UlogStreamAck  # noqa: F401
+from px4_msgs.msg._unregister_ext_component import UnregisterExtComponent  # noqa: F401
 from px4_msgs.msg._vehicle_acceleration import VehicleAcceleration  # noqa: F401
 from px4_msgs.msg._vehicle_air_data import VehicleAirData  # noqa: F401
 from px4_msgs.msg._vehicle_angular_acceleration_setpoint import VehicleAngularAccelerationSetpoint  # noqa: F401

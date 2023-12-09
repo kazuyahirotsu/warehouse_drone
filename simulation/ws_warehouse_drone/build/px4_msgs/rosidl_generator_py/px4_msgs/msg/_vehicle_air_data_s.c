@@ -113,6 +113,15 @@ bool px4_msgs__msg__vehicle_air_data__convert_from_py(PyObject * _pymsg, void * 
     ros_message->rho = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
+  {  // eas2tas
+    PyObject * field = PyObject_GetAttrString(_pymsg, "eas2tas");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->eas2tas = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
   {  // calibration_count
     PyObject * field = PyObject_GetAttrString(_pymsg, "calibration_count");
     if (!field) {
@@ -215,6 +224,17 @@ PyObject * px4_msgs__msg__vehicle_air_data__convert_to_py(void * raw_ros_message
     field = PyFloat_FromDouble(ros_message->rho);
     {
       int rc = PyObject_SetAttrString(_pymessage, "rho", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // eas2tas
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->eas2tas);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "eas2tas", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

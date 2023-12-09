@@ -13,6 +13,8 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/Airspeed.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/AirspeedValidated.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/AirspeedWind.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ArmingCheckReply.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ArmingCheckRequest.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/AutotuneAttitudeControlStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/BatteryStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ButtonEvent.msg",
@@ -22,6 +24,7 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/CellularStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/CollisionConstraints.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/CollisionReport.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ConfigOverrides.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ControlAllocatorStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/Cpuload.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/DatamanRequest.msg",
@@ -94,6 +97,8 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ManualControlSwitches.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/MavlinkLog.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/MavlinkTunnel.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/MessageFormatRequest.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/MessageFormatResponse.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/Mission.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/MissionResult.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/ModeCompleted.msg",
@@ -125,6 +130,8 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RateCtrlStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RcChannels.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RcParameterMap.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RegisterExtComponentReply.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RegisterExtComponentRequest.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/Rpm.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/RtlTimeEstimate.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/SatelliteInfo.msg",
@@ -162,6 +169,7 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/UavcanParameterValue.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/UlogStream.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/UlogStreamAck.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/UnregisterExtComponent.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/VehicleAcceleration.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/VehicleAirData.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/VehicleAngularAccelerationSetpoint.msg",
@@ -191,6 +199,7 @@
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/VehicleTrajectoryWaypoint.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/VtolVehicleStatus.msg",
     "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/Wind.msg",
-    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/YawEstimatorStatus.msg"
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:msg/YawEstimatorStatus.msg",
+    "/home/kazuya/warehouse_drone/simulation/ws_warehouse_drone/src/px4_msgs:srv/VehicleCommand.srv"
   ]
 }

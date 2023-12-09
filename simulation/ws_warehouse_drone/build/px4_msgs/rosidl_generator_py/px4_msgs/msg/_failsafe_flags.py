@@ -84,7 +84,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         '_battery_warning',
         '_battery_low_remaining_time',
         '_battery_unhealthy',
-        '_primary_geofence_breached',
+        '_geofence_breached',
         '_mission_failure',
         '_vtol_fixed_wing_system_failure',
         '_wind_limit_exceeded',
@@ -126,7 +126,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         'battery_warning': 'uint8',
         'battery_low_remaining_time': 'boolean',
         'battery_unhealthy': 'boolean',
-        'primary_geofence_breached': 'boolean',
+        'geofence_breached': 'boolean',
         'mission_failure': 'boolean',
         'vtol_fixed_wing_system_failure': 'boolean',
         'wind_limit_exceeded': 'boolean',
@@ -213,7 +213,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self.battery_warning = kwargs.get('battery_warning', int())
         self.battery_low_remaining_time = kwargs.get('battery_low_remaining_time', bool())
         self.battery_unhealthy = kwargs.get('battery_unhealthy', bool())
-        self.primary_geofence_breached = kwargs.get('primary_geofence_breached', bool())
+        self.geofence_breached = kwargs.get('geofence_breached', bool())
         self.mission_failure = kwargs.get('mission_failure', bool())
         self.vtol_fixed_wing_system_failure = kwargs.get('vtol_fixed_wing_system_failure', bool())
         self.wind_limit_exceeded = kwargs.get('wind_limit_exceeded', bool())
@@ -311,7 +311,7 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
             return False
         if self.battery_unhealthy != other.battery_unhealthy:
             return False
-        if self.primary_geofence_breached != other.primary_geofence_breached:
+        if self.geofence_breached != other.geofence_breached:
             return False
         if self.mission_failure != other.mission_failure:
             return False
@@ -746,17 +746,17 @@ class FailsafeFlags(metaclass=Metaclass_FailsafeFlags):
         self._battery_unhealthy = value
 
     @builtins.property
-    def primary_geofence_breached(self):
-        """Message field 'primary_geofence_breached'."""
-        return self._primary_geofence_breached
+    def geofence_breached(self):
+        """Message field 'geofence_breached'."""
+        return self._geofence_breached
 
-    @primary_geofence_breached.setter
-    def primary_geofence_breached(self, value):
+    @geofence_breached.setter
+    def geofence_breached(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'primary_geofence_breached' field must be of type 'bool'"
-        self._primary_geofence_breached = value
+                "The 'geofence_breached' field must be of type 'bool'"
+        self._geofence_breached = value
 
     @builtins.property
     def mission_failure(self):

@@ -79,8 +79,8 @@ typedef struct px4_msgs__msg__FailsafeFlags
   /// Battery unhealthy
   bool battery_unhealthy;
   /// Other
-  /// Primary Geofence breached
-  bool primary_geofence_breached;
+  /// Geofence breached (one or multiple)
+  bool geofence_breached;
   /// Mission failure
   bool mission_failure;
   /// vehicle in fixed-wing system failure failsafe mode (after quad-chute)

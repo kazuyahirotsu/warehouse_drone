@@ -74,6 +74,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: eas2tas
+  {
+    out << "eas2tas: ";
+    rosidl_generator_traits::value_to_yaml(msg.eas2tas, out);
+    out << ", ";
+  }
+
   // member: calibration_count
   {
     out << "calibration_count: ";
@@ -153,6 +160,16 @@ inline void to_block_style_yaml(
     }
     out << "rho: ";
     rosidl_generator_traits::value_to_yaml(msg.rho, out);
+    out << "\n";
+  }
+
+  // member: eas2tas
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "eas2tas: ";
+    rosidl_generator_traits::value_to_yaml(msg.eas2tas, out);
     out << "\n";
   }
 

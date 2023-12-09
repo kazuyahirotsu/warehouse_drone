@@ -248,13 +248,13 @@ bool px4_msgs__msg__tecs_status__convert_from_py(PyObject * _pymsg, void * _ros_
     ros_message->throttle_trim = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
-  {  // mode
-    PyObject * field = PyObject_GetAttrString(_pymsg, "mode");
+  {  // underspeed_ratio
+    PyObject * field = PyObject_GetAttrString(_pymsg, "underspeed_ratio");
     if (!field) {
       return false;
     }
-    assert(PyLong_Check(field));
-    ros_message->mode = (uint8_t)PyLong_AsUnsignedLong(field);
+    assert(PyFloat_Check(field));
+    ros_message->underspeed_ratio = (float)PyFloat_AS_DOUBLE(field);
     Py_DECREF(field);
   }
 
@@ -521,11 +521,11 @@ PyObject * px4_msgs__msg__tecs_status__convert_to_py(void * raw_ros_message)
       }
     }
   }
-  {  // mode
+  {  // underspeed_ratio
     PyObject * field = NULL;
-    field = PyLong_FromUnsignedLong(ros_message->mode);
+    field = PyFloat_FromDouble(ros_message->underspeed_ratio);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "mode", field);
+      int rc = PyObject_SetAttrString(_pymessage, "underspeed_ratio", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

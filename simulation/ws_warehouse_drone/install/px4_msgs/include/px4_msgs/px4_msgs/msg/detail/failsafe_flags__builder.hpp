@@ -165,15 +165,15 @@ private:
   ::px4_msgs::msg::FailsafeFlags msg_;
 };
 
-class Init_FailsafeFlags_primary_geofence_breached
+class Init_FailsafeFlags_geofence_breached
 {
 public:
-  explicit Init_FailsafeFlags_primary_geofence_breached(::px4_msgs::msg::FailsafeFlags & msg)
+  explicit Init_FailsafeFlags_geofence_breached(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_mission_failure primary_geofence_breached(::px4_msgs::msg::FailsafeFlags::_primary_geofence_breached_type arg)
+  Init_FailsafeFlags_mission_failure geofence_breached(::px4_msgs::msg::FailsafeFlags::_geofence_breached_type arg)
   {
-    msg_.primary_geofence_breached = std::move(arg);
+    msg_.geofence_breached = std::move(arg);
     return Init_FailsafeFlags_mission_failure(msg_);
   }
 
@@ -187,10 +187,10 @@ public:
   explicit Init_FailsafeFlags_battery_unhealthy(::px4_msgs::msg::FailsafeFlags & msg)
   : msg_(msg)
   {}
-  Init_FailsafeFlags_primary_geofence_breached battery_unhealthy(::px4_msgs::msg::FailsafeFlags::_battery_unhealthy_type arg)
+  Init_FailsafeFlags_geofence_breached battery_unhealthy(::px4_msgs::msg::FailsafeFlags::_battery_unhealthy_type arg)
   {
     msg_.battery_unhealthy = std::move(arg);
-    return Init_FailsafeFlags_primary_geofence_breached(msg_);
+    return Init_FailsafeFlags_geofence_breached(msg_);
   }
 
 private:

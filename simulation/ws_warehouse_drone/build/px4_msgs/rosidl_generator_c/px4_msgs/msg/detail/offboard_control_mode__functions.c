@@ -23,7 +23,8 @@ px4_msgs__msg__OffboardControlMode__init(px4_msgs__msg__OffboardControlMode * ms
   // acceleration
   // attitude
   // body_rate
-  // actuator
+  // thrust_and_torque
+  // direct_actuator
   return true;
 }
 
@@ -39,7 +40,8 @@ px4_msgs__msg__OffboardControlMode__fini(px4_msgs__msg__OffboardControlMode * ms
   // acceleration
   // attitude
   // body_rate
-  // actuator
+  // thrust_and_torque
+  // direct_actuator
 }
 
 bool
@@ -72,8 +74,12 @@ px4_msgs__msg__OffboardControlMode__are_equal(const px4_msgs__msg__OffboardContr
   if (lhs->body_rate != rhs->body_rate) {
     return false;
   }
-  // actuator
-  if (lhs->actuator != rhs->actuator) {
+  // thrust_and_torque
+  if (lhs->thrust_and_torque != rhs->thrust_and_torque) {
+    return false;
+  }
+  // direct_actuator
+  if (lhs->direct_actuator != rhs->direct_actuator) {
     return false;
   }
   return true;
@@ -99,8 +105,10 @@ px4_msgs__msg__OffboardControlMode__copy(
   output->attitude = input->attitude;
   // body_rate
   output->body_rate = input->body_rate;
-  // actuator
-  output->actuator = input->actuator;
+  // thrust_and_torque
+  output->thrust_and_torque = input->thrust_and_torque;
+  // direct_actuator
+  output->direct_actuator = input->direct_actuator;
   return true;
 }
 

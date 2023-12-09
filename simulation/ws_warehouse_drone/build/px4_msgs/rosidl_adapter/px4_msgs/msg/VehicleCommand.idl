@@ -205,6 +205,9 @@ module px4_msgs {
         "Mission command to set a Camera Auto Mount Pivoting Oblique Survey for this flight|Camera trigger distance (meters)| Shutter integration time (ms)| Camera minimum trigger interval| Number of positions| Roll| Pitch| Empty|")
       const uint16 VEHICLE_CMD_OBLIQUE_SURVEY = 260;
       @verbatim (language="comment", text=
+        "Enable the specified standard MAVLink mode |MAV_STANDARD_MODE|")
+      const uint16 VEHICLE_CMD_DO_SET_STANDARD_MODE = 262;
+      @verbatim (language="comment", text=
         "Command to ask information about a low level gimbal")
       const uint16 VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION = 283;
       @verbatim (language="comment", text=
@@ -290,6 +293,9 @@ module px4_msgs {
         "Sets the GPS coordinates of the vehicle local origin (0,0,0) position. |Empty|Empty|Empty|Empty|Latitude|Longitude|Altitude|")
       const uint32 VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN = 100000;
       @verbatim (language="comment", text=
+        "Change mode by specifying nav_state directly. |nav_state|Empty|Empty|Empty|Empty|Empty|Empty|")
+      const uint32 VEHICLE_CMD_SET_NAV_STATE = 100001;
+      @verbatim (language="comment", text=
         "Load and keep safe position (Roll,Pitch,Yaw) from permanent memory and stop stabilization |")
       const uint8 VEHICLE_MOUNT_MODE_RETRACT = 0;
       @verbatim (language="comment", text=
@@ -362,6 +368,7 @@ module px4_msgs {
       const uint8 GRIPPER_ACTION_RELEASE = 0;
       const uint8 GRIPPER_ACTION_GRAB = 1;
       const uint8 ORB_QUEUE_LENGTH = 8;
+      const uint16 COMPONENT_MODE_EXECUTOR_START = 1000;
     };
     @verbatim (language="comment", text=
       "Vehicle Command uORB message. Used for commanding a mission / action / etc." "\n"
@@ -416,8 +423,8 @@ module px4_msgs {
       uint8 source_system;
 
       @verbatim (language="comment", text=
-        "Component sending the command")
-      uint8 source_component;
+        "Component / mode executor sending the command")
+      uint16 source_component;
 
       @verbatim (language="comment", text=
         "0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)")

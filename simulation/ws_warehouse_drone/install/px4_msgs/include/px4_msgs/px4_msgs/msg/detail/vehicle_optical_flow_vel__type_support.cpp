@@ -113,78 +113,78 @@ void assign_function__VehicleOpticalFlowVel__vel_ne(
   item = value;
 }
 
-size_t size_function__VehicleOpticalFlowVel__flow_uncompensated_integral(const void * untyped_member)
+size_t size_function__VehicleOpticalFlowVel__flow_rate_uncompensated(const void * untyped_member)
 {
   (void)untyped_member;
   return 2;
 }
 
-const void * get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral(const void * untyped_member, size_t index)
+const void * get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated(const void * untyped_member, size_t index)
 {
   const auto & member =
     *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__VehicleOpticalFlowVel__flow_uncompensated_integral(void * untyped_member, size_t index)
+void * get_function__VehicleOpticalFlowVel__flow_rate_uncompensated(void * untyped_member, size_t index)
 {
   auto & member =
     *reinterpret_cast<std::array<float, 2> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
+void fetch_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const auto & item = *reinterpret_cast<const float *>(
-    get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral(untyped_member, index));
+    get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated(untyped_member, index));
   auto & value = *reinterpret_cast<float *>(untyped_value);
   value = item;
 }
 
-void assign_function__VehicleOpticalFlowVel__flow_uncompensated_integral(
+void assign_function__VehicleOpticalFlowVel__flow_rate_uncompensated(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   auto & item = *reinterpret_cast<float *>(
-    get_function__VehicleOpticalFlowVel__flow_uncompensated_integral(untyped_member, index));
+    get_function__VehicleOpticalFlowVel__flow_rate_uncompensated(untyped_member, index));
   const auto & value = *reinterpret_cast<const float *>(untyped_value);
   item = value;
 }
 
-size_t size_function__VehicleOpticalFlowVel__flow_compensated_integral(const void * untyped_member)
+size_t size_function__VehicleOpticalFlowVel__flow_rate_compensated(const void * untyped_member)
 {
   (void)untyped_member;
   return 2;
 }
 
-const void * get_const_function__VehicleOpticalFlowVel__flow_compensated_integral(const void * untyped_member, size_t index)
+const void * get_const_function__VehicleOpticalFlowVel__flow_rate_compensated(const void * untyped_member, size_t index)
 {
   const auto & member =
     *reinterpret_cast<const std::array<float, 2> *>(untyped_member);
   return &member[index];
 }
 
-void * get_function__VehicleOpticalFlowVel__flow_compensated_integral(void * untyped_member, size_t index)
+void * get_function__VehicleOpticalFlowVel__flow_rate_compensated(void * untyped_member, size_t index)
 {
   auto & member =
     *reinterpret_cast<std::array<float, 2> *>(untyped_member);
   return &member[index];
 }
 
-void fetch_function__VehicleOpticalFlowVel__flow_compensated_integral(
+void fetch_function__VehicleOpticalFlowVel__flow_rate_compensated(
   const void * untyped_member, size_t index, void * untyped_value)
 {
   const auto & item = *reinterpret_cast<const float *>(
-    get_const_function__VehicleOpticalFlowVel__flow_compensated_integral(untyped_member, index));
+    get_const_function__VehicleOpticalFlowVel__flow_rate_compensated(untyped_member, index));
   auto & value = *reinterpret_cast<float *>(untyped_value);
   value = item;
 }
 
-void assign_function__VehicleOpticalFlowVel__flow_compensated_integral(
+void assign_function__VehicleOpticalFlowVel__flow_rate_compensated(
   void * untyped_member, size_t index, const void * untyped_value)
 {
   auto & item = *reinterpret_cast<float *>(
-    get_function__VehicleOpticalFlowVel__flow_compensated_integral(untyped_member, index));
+    get_function__VehicleOpticalFlowVel__flow_rate_compensated(untyped_member, index));
   const auto & value = *reinterpret_cast<const float *>(untyped_value);
   item = value;
 }
@@ -223,44 +223,6 @@ void assign_function__VehicleOpticalFlowVel__gyro_rate(
 {
   auto & item = *reinterpret_cast<float *>(
     get_function__VehicleOpticalFlowVel__gyro_rate(untyped_member, index));
-  const auto & value = *reinterpret_cast<const float *>(untyped_value);
-  item = value;
-}
-
-size_t size_function__VehicleOpticalFlowVel__gyro_rate_integral(const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * get_const_function__VehicleOpticalFlowVel__gyro_rate_integral(const void * untyped_member, size_t index)
-{
-  const auto & member =
-    *reinterpret_cast<const std::array<float, 3> *>(untyped_member);
-  return &member[index];
-}
-
-void * get_function__VehicleOpticalFlowVel__gyro_rate_integral(void * untyped_member, size_t index)
-{
-  auto & member =
-    *reinterpret_cast<std::array<float, 3> *>(untyped_member);
-  return &member[index];
-}
-
-void fetch_function__VehicleOpticalFlowVel__gyro_rate_integral(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const auto & item = *reinterpret_cast<const float *>(
-    get_const_function__VehicleOpticalFlowVel__gyro_rate_integral(untyped_member, index));
-  auto & value = *reinterpret_cast<float *>(untyped_value);
-  value = item;
-}
-
-void assign_function__VehicleOpticalFlowVel__gyro_rate_integral(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  auto & item = *reinterpret_cast<float *>(
-    get_function__VehicleOpticalFlowVel__gyro_rate_integral(untyped_member, index));
   const auto & value = *reinterpret_cast<const float *>(untyped_value);
   item = value;
 }
@@ -341,45 +303,7 @@ void assign_function__VehicleOpticalFlowVel__ref_gyro(
   item = value;
 }
 
-size_t size_function__VehicleOpticalFlowVel__meas_gyro(const void * untyped_member)
-{
-  (void)untyped_member;
-  return 3;
-}
-
-const void * get_const_function__VehicleOpticalFlowVel__meas_gyro(const void * untyped_member, size_t index)
-{
-  const auto & member =
-    *reinterpret_cast<const std::array<float, 3> *>(untyped_member);
-  return &member[index];
-}
-
-void * get_function__VehicleOpticalFlowVel__meas_gyro(void * untyped_member, size_t index)
-{
-  auto & member =
-    *reinterpret_cast<std::array<float, 3> *>(untyped_member);
-  return &member[index];
-}
-
-void fetch_function__VehicleOpticalFlowVel__meas_gyro(
-  const void * untyped_member, size_t index, void * untyped_value)
-{
-  const auto & item = *reinterpret_cast<const float *>(
-    get_const_function__VehicleOpticalFlowVel__meas_gyro(untyped_member, index));
-  auto & value = *reinterpret_cast<float *>(untyped_value);
-  value = item;
-}
-
-void assign_function__VehicleOpticalFlowVel__meas_gyro(
-  void * untyped_member, size_t index, const void * untyped_value)
-{
-  auto & item = *reinterpret_cast<float *>(
-    get_function__VehicleOpticalFlowVel__meas_gyro(untyped_member, index));
-  const auto & value = *reinterpret_cast<const float *>(untyped_value);
-  item = value;
-}
-
-static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleOpticalFlowVel_message_member_array[11] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleOpticalFlowVel_message_member_array[9] = {
   {
     "timestamp",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT64,  // type
@@ -449,37 +373,37 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleOptica
     nullptr  // resize(index) function pointer
   },
   {
-    "flow_uncompensated_integral",  // name
+    "flow_rate_uncompensated",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     true,  // is array
     2,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, flow_uncompensated_integral),  // bytes offset in struct
+    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, flow_rate_uncompensated),  // bytes offset in struct
     nullptr,  // default value
-    size_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // size() function pointer
-    get_const_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // get_const(index) function pointer
-    get_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // get(index) function pointer
-    fetch_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // fetch(index, &value) function pointer
-    assign_function__VehicleOpticalFlowVel__flow_uncompensated_integral,  // assign(index, value) function pointer
+    size_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // size() function pointer
+    get_const_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // get_const(index) function pointer
+    get_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // get(index) function pointer
+    fetch_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // fetch(index, &value) function pointer
+    assign_function__VehicleOpticalFlowVel__flow_rate_uncompensated,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
   },
   {
-    "flow_compensated_integral",  // name
+    "flow_rate_compensated",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     true,  // is array
     2,  // array size
     false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, flow_compensated_integral),  // bytes offset in struct
+    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, flow_rate_compensated),  // bytes offset in struct
     nullptr,  // default value
-    size_function__VehicleOpticalFlowVel__flow_compensated_integral,  // size() function pointer
-    get_const_function__VehicleOpticalFlowVel__flow_compensated_integral,  // get_const(index) function pointer
-    get_function__VehicleOpticalFlowVel__flow_compensated_integral,  // get(index) function pointer
-    fetch_function__VehicleOpticalFlowVel__flow_compensated_integral,  // fetch(index, &value) function pointer
-    assign_function__VehicleOpticalFlowVel__flow_compensated_integral,  // assign(index, value) function pointer
+    size_function__VehicleOpticalFlowVel__flow_rate_compensated,  // size() function pointer
+    get_const_function__VehicleOpticalFlowVel__flow_rate_compensated,  // get_const(index) function pointer
+    get_function__VehicleOpticalFlowVel__flow_rate_compensated,  // get(index) function pointer
+    fetch_function__VehicleOpticalFlowVel__flow_rate_compensated,  // fetch(index, &value) function pointer
+    assign_function__VehicleOpticalFlowVel__flow_rate_compensated,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
   },
   {
@@ -497,23 +421,6 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleOptica
     get_function__VehicleOpticalFlowVel__gyro_rate,  // get(index) function pointer
     fetch_function__VehicleOpticalFlowVel__gyro_rate,  // fetch(index, &value) function pointer
     assign_function__VehicleOpticalFlowVel__gyro_rate,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
-  },
-  {
-    "gyro_rate_integral",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, gyro_rate_integral),  // bytes offset in struct
-    nullptr,  // default value
-    size_function__VehicleOpticalFlowVel__gyro_rate_integral,  // size() function pointer
-    get_const_function__VehicleOpticalFlowVel__gyro_rate_integral,  // get_const(index) function pointer
-    get_function__VehicleOpticalFlowVel__gyro_rate_integral,  // get(index) function pointer
-    fetch_function__VehicleOpticalFlowVel__gyro_rate_integral,  // fetch(index, &value) function pointer
-    assign_function__VehicleOpticalFlowVel__gyro_rate_integral,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
   },
   {
@@ -549,30 +456,13 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember VehicleOptica
     fetch_function__VehicleOpticalFlowVel__ref_gyro,  // fetch(index, &value) function pointer
     assign_function__VehicleOpticalFlowVel__ref_gyro,  // assign(index, value) function pointer
     nullptr  // resize(index) function pointer
-  },
-  {
-    "meas_gyro",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_FLOAT,  // type
-    0,  // upper bound of string
-    nullptr,  // members of sub message
-    true,  // is array
-    3,  // array size
-    false,  // is upper bound
-    offsetof(px4_msgs::msg::VehicleOpticalFlowVel, meas_gyro),  // bytes offset in struct
-    nullptr,  // default value
-    size_function__VehicleOpticalFlowVel__meas_gyro,  // size() function pointer
-    get_const_function__VehicleOpticalFlowVel__meas_gyro,  // get_const(index) function pointer
-    get_function__VehicleOpticalFlowVel__meas_gyro,  // get(index) function pointer
-    fetch_function__VehicleOpticalFlowVel__meas_gyro,  // fetch(index, &value) function pointer
-    assign_function__VehicleOpticalFlowVel__meas_gyro,  // assign(index, value) function pointer
-    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers VehicleOpticalFlowVel_message_members = {
   "px4_msgs::msg",  // message namespace
   "VehicleOpticalFlowVel",  // message name
-  11,  // number of fields
+  9,  // number of fields
   sizeof(px4_msgs::msg::VehicleOpticalFlowVel),
   VehicleOpticalFlowVel_message_member_array,  // message members
   VehicleOpticalFlowVel_init_function,  // function to initialize message memory (memory has to be allocated)

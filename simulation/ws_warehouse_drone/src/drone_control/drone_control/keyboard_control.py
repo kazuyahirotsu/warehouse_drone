@@ -54,8 +54,14 @@ class KeyboardControl(Node):
         self.timer = self.create_timer(0.1, self.timer_callback_keyboard)
 
         self.settings = self.saveTerminalSettings()
-        self.target_position = [0,0,0]
-        self.target_yaw = 0
+        self.target_position = [0.0,0.0,0.0]
+        self.target_yaw = 0.0
+
+        self.key = ''
+        # Create a thread for keyboard input handling
+        self.keyboard_thread = threading.Thread(target=self.keyboard_input_thread)
+        self.keyboard_thread.daemon = True  # Make the thread a daemon so it terminates when the main program exits
+        self.keyboard_thread.start()
 
     def vehicle_local_position_callback(self, vehicle_local_position):
         """Callback function for vehicle_local_position topic subscriber."""
@@ -198,14 +204,25 @@ class KeyboardControl(Node):
         termios.tcsetattr(sys.stdin, termios.TCSADRAIN, old_settings)
 
 
+    def keyboard_input_thread(self):
+        while True:
+            self.key = self.getKey(self.settings)
+            self.get_logger().info(f'Keyboard input: {self.key}')
+
+            if self.key == 'q':  # ASCII for 'q'
+                self.disarm()
+            # Handle other keyboard inputs here
+
+            # Add a sleep to control the rate of keyboard input processing (adjust as needed)
+            # rclpy.sleep(0.1)
+
     def timer_callback_keyboard(self):
         """Method to control the drone with keyboard inputs."""
             
         self.publish_offboard_control_heartbeat_signal()
         current_position = self.vehicle_local_position
 
-        key = self.getKey(self.settings)
-        self.get_logger().info(f'{key}')
+        self.get_logger().info(f'{self.key}')
 
         if self.offboard_setpoint_counter == 10:
             self.engage_offboard_mode()
@@ -215,28 +232,28 @@ class KeyboardControl(Node):
             current_position = self.vehicle_local_position
 
             # Keycode for 'up' arrow
-            if key == 'i':  # ASCII for 'w'
+            if self.key == 'i':  # ASCII for 'w'
                 self.target_position[1] += 1
             # Keycode for 'down' arrow
-            if key == 'k':  # ASCII for 's'
+            if self.key == 'k':  # ASCII for 's'
                 self.target_position[1] -= 1
             # Keycode for 'left' arrow
-            if key == 'j':  # ASCII for 'a'
+            if self.key == 'j':  # ASCII for 'a'
                 self.target_position[0] -= 1
             # Keycode for 'right' arrow
-            if key == 'l':  # ASCII for 'd'
+            if self.key == 'l':  # ASCII for 'd'
                 self.target_position[0] += 1
             # Keycode for increasing altitude ('w')
-            if key == 'w':  # ASCII for 't'
+            if self.key == 'w':  # ASCII for 't'
                 self.target_position[2] -= 1
             # Keycode for decreasing altitude ('s')
-            if key == 's':  # ASCII for 'b'
+            if self.key == 's':  # ASCII for 'b'
                 self.target_position[2] += 1
             # Keycode for rotating counter-clockwise
-            if key == 'a':  # ASCII for 'j'
+            if self.key == 'a':  # ASCII for 'j'
                 self.target_yaw -= 0.1
             # Keycode for rotating clockwise
-            if key == 'd':  # ASCII for 'k'
+            if self.key == 'd':  # ASCII for 'k'
                 self.target_yaw += 0.1
 
             self.get_logger().info(f"target: {self.target_position}, yaw: {self.target_yaw}")

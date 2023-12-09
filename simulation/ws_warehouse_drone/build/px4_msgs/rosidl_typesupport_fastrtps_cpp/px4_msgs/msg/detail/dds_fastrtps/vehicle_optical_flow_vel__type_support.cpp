@@ -44,21 +44,17 @@ cdr_serialize(
   {
     cdr << ros_message.vel_ne;
   }
-  // Member: flow_uncompensated_integral
+  // Member: flow_rate_uncompensated
   {
-    cdr << ros_message.flow_uncompensated_integral;
+    cdr << ros_message.flow_rate_uncompensated;
   }
-  // Member: flow_compensated_integral
+  // Member: flow_rate_compensated
   {
-    cdr << ros_message.flow_compensated_integral;
+    cdr << ros_message.flow_rate_compensated;
   }
   // Member: gyro_rate
   {
     cdr << ros_message.gyro_rate;
-  }
-  // Member: gyro_rate_integral
-  {
-    cdr << ros_message.gyro_rate_integral;
   }
   // Member: gyro_bias
   {
@@ -67,10 +63,6 @@ cdr_serialize(
   // Member: ref_gyro
   {
     cdr << ros_message.ref_gyro;
-  }
-  // Member: meas_gyro
-  {
-    cdr << ros_message.meas_gyro;
   }
   return true;
 }
@@ -97,24 +89,19 @@ cdr_deserialize(
     cdr >> ros_message.vel_ne;
   }
 
-  // Member: flow_uncompensated_integral
+  // Member: flow_rate_uncompensated
   {
-    cdr >> ros_message.flow_uncompensated_integral;
+    cdr >> ros_message.flow_rate_uncompensated;
   }
 
-  // Member: flow_compensated_integral
+  // Member: flow_rate_compensated
   {
-    cdr >> ros_message.flow_compensated_integral;
+    cdr >> ros_message.flow_rate_compensated;
   }
 
   // Member: gyro_rate
   {
     cdr >> ros_message.gyro_rate;
-  }
-
-  // Member: gyro_rate_integral
-  {
-    cdr >> ros_message.gyro_rate_integral;
   }
 
   // Member: gyro_bias
@@ -125,11 +112,6 @@ cdr_deserialize(
   // Member: ref_gyro
   {
     cdr >> ros_message.ref_gyro;
-  }
-
-  // Member: meas_gyro
-  {
-    cdr >> ros_message.meas_gyro;
   }
 
   return true;
@@ -174,17 +156,17 @@ get_serialized_size(
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: flow_uncompensated_integral
+  // Member: flow_rate_uncompensated
   {
     size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.flow_uncompensated_integral[0]);
+    size_t item_size = sizeof(ros_message.flow_rate_uncompensated[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: flow_compensated_integral
+  // Member: flow_rate_compensated
   {
     size_t array_size = 2;
-    size_t item_size = sizeof(ros_message.flow_compensated_integral[0]);
+    size_t item_size = sizeof(ros_message.flow_rate_compensated[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -192,13 +174,6 @@ get_serialized_size(
   {
     size_t array_size = 3;
     size_t item_size = sizeof(ros_message.gyro_rate[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: gyro_rate_integral
-  {
-    size_t array_size = 3;
-    size_t item_size = sizeof(ros_message.gyro_rate_integral[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -213,13 +188,6 @@ get_serialized_size(
   {
     size_t array_size = 3;
     size_t item_size = sizeof(ros_message.ref_gyro[0]);
-    current_alignment += array_size * item_size +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
-  }
-  // Member: meas_gyro
-  {
-    size_t array_size = 3;
-    size_t item_size = sizeof(ros_message.meas_gyro[0]);
     current_alignment += array_size * item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -238,6 +206,8 @@ max_serialized_size_VehicleOpticalFlowVel(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -249,6 +219,7 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -257,6 +228,7 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -265,6 +237,7 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 2;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -273,22 +246,25 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 2;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: flow_uncompensated_integral
+  // Member: flow_rate_uncompensated
   {
     size_t array_size = 2;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: flow_compensated_integral
+  // Member: flow_rate_compensated
   {
     size_t array_size = 2;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -297,14 +273,7 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 3;
 
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
-  }
-
-  // Member: gyro_rate_integral
-  {
-    size_t array_size = 3;
-
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -313,6 +282,7 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 3;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
@@ -321,19 +291,25 @@ max_serialized_size_VehicleOpticalFlowVel(
   {
     size_t array_size = 3;
 
+    last_member_size = array_size * sizeof(uint32_t);
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
-  // Member: meas_gyro
-  {
-    size_t array_size = 3;
-
-    current_alignment += array_size * sizeof(uint32_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs::msg::VehicleOpticalFlowVel;
+    is_plain =
+      (
+      offsetof(DataType, ref_gyro) +
+      last_member_size
+      ) == ret_val;
   }
 
-  return current_alignment - initial_alignment;
+  return ret_val;
 }
 
 static bool _VehicleOpticalFlowVel__cdr_serialize(

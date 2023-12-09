@@ -54,24 +54,24 @@ static bool _GeofenceResult__cdr_serialize(
     cdr << ros_message->timestamp;
   }
 
-  // Field name: geofence_violation_reason
+  // Field name: geofence_max_dist_triggered
   {
-    cdr << ros_message->geofence_violation_reason;
+    cdr << (ros_message->geofence_max_dist_triggered ? true : false);
   }
 
-  // Field name: primary_geofence_breached
+  // Field name: geofence_max_alt_triggered
   {
-    cdr << (ros_message->primary_geofence_breached ? true : false);
+    cdr << (ros_message->geofence_max_alt_triggered ? true : false);
   }
 
-  // Field name: primary_geofence_action
+  // Field name: geofence_custom_fence_triggered
   {
-    cdr << ros_message->primary_geofence_action;
+    cdr << (ros_message->geofence_custom_fence_triggered ? true : false);
   }
 
-  // Field name: home_required
+  // Field name: geofence_action
   {
-    cdr << (ros_message->home_required ? true : false);
+    cdr << ros_message->geofence_action;
   }
 
   return true;
@@ -91,28 +91,30 @@ static bool _GeofenceResult__cdr_deserialize(
     cdr >> ros_message->timestamp;
   }
 
-  // Field name: geofence_violation_reason
-  {
-    cdr >> ros_message->geofence_violation_reason;
-  }
-
-  // Field name: primary_geofence_breached
+  // Field name: geofence_max_dist_triggered
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->primary_geofence_breached = tmp ? true : false;
+    ros_message->geofence_max_dist_triggered = tmp ? true : false;
   }
 
-  // Field name: primary_geofence_action
-  {
-    cdr >> ros_message->primary_geofence_action;
-  }
-
-  // Field name: home_required
+  // Field name: geofence_max_alt_triggered
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->home_required = tmp ? true : false;
+    ros_message->geofence_max_alt_triggered = tmp ? true : false;
+  }
+
+  // Field name: geofence_custom_fence_triggered
+  {
+    uint8_t tmp;
+    cdr >> tmp;
+    ros_message->geofence_custom_fence_triggered = tmp ? true : false;
+  }
+
+  // Field name: geofence_action
+  {
+    cdr >> ros_message->geofence_action;
   }
 
   return true;
@@ -138,27 +140,27 @@ size_t get_serialized_size_px4_msgs__msg__GeofenceResult(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name geofence_violation_reason
+  // field.name geofence_max_dist_triggered
   {
-    size_t item_size = sizeof(ros_message->geofence_violation_reason);
+    size_t item_size = sizeof(ros_message->geofence_max_dist_triggered);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name primary_geofence_breached
+  // field.name geofence_max_alt_triggered
   {
-    size_t item_size = sizeof(ros_message->primary_geofence_breached);
+    size_t item_size = sizeof(ros_message->geofence_max_alt_triggered);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name primary_geofence_action
+  // field.name geofence_custom_fence_triggered
   {
-    size_t item_size = sizeof(ros_message->primary_geofence_action);
+    size_t item_size = sizeof(ros_message->geofence_custom_fence_triggered);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // field.name home_required
+  // field.name geofence_action
   {
-    size_t item_size = sizeof(ros_message->home_required);
+    size_t item_size = sizeof(ros_message->geofence_action);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -183,6 +185,8 @@ size_t max_serialized_size_px4_msgs__msg__GeofenceResult(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -193,35 +197,53 @@ size_t max_serialized_size_px4_msgs__msg__GeofenceResult(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
-  // member: geofence_violation_reason
+  // member: geofence_max_dist_triggered
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: primary_geofence_breached
+  // member: geofence_max_alt_triggered
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: primary_geofence_action
+  // member: geofence_custom_fence_triggered
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
-  // member: home_required
+  // member: geofence_action
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__GeofenceResult;
+    is_plain =
+      (
+      offsetof(DataType, geofence_action) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _GeofenceResult__max_serialized_size(char & bounds_info)

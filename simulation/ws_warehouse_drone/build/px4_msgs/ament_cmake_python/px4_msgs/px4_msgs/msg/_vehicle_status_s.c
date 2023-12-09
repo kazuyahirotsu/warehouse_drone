@@ -131,6 +131,33 @@ bool px4_msgs__msg__vehicle_status__convert_from_py(PyObject * _pymsg, void * _r
     ros_message->nav_state = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
+  {  // executor_in_charge
+    PyObject * field = PyObject_GetAttrString(_pymsg, "executor_in_charge");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->executor_in_charge = (uint8_t)PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
+  {  // valid_nav_states_mask
+    PyObject * field = PyObject_GetAttrString(_pymsg, "valid_nav_states_mask");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->valid_nav_states_mask = PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
+  {  // can_set_nav_states_mask
+    PyObject * field = PyObject_GetAttrString(_pymsg, "can_set_nav_states_mask");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->can_set_nav_states_mask = PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
   {  // failure_detector_status
     PyObject * field = PyObject_GetAttrString(_pymsg, "failure_detector_status");
     if (!field) {
@@ -174,6 +201,15 @@ bool px4_msgs__msg__vehicle_status__convert_from_py(PyObject * _pymsg, void * _r
     }
     assert(PyBool_Check(field));
     ros_message->failsafe_and_user_took_over = (Py_True == field);
+    Py_DECREF(field);
+  }
+  {  // failsafe_defer_state
+    PyObject * field = PyObject_GetAttrString(_pymsg, "failsafe_defer_state");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->failsafe_defer_state = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // gcs_connection_lost
@@ -504,6 +540,39 @@ PyObject * px4_msgs__msg__vehicle_status__convert_to_py(void * raw_ros_message)
       }
     }
   }
+  {  // executor_in_charge
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->executor_in_charge);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "executor_in_charge", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // valid_nav_states_mask
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->valid_nav_states_mask);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "valid_nav_states_mask", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // can_set_nav_states_mask
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->can_set_nav_states_mask);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "can_set_nav_states_mask", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
   {  // failure_detector_status
     PyObject * field = NULL;
     field = PyLong_FromUnsignedLong(ros_message->failure_detector_status);
@@ -553,6 +622,17 @@ PyObject * px4_msgs__msg__vehicle_status__convert_to_py(void * raw_ros_message)
     field = PyBool_FromLong(ros_message->failsafe_and_user_took_over ? 1 : 0);
     {
       int rc = PyObject_SetAttrString(_pymessage, "failsafe_and_user_took_over", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // failsafe_defer_state
+    PyObject * field = NULL;
+    field = PyLong_FromUnsignedLong(ros_message->failsafe_defer_state);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "failsafe_defer_state", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

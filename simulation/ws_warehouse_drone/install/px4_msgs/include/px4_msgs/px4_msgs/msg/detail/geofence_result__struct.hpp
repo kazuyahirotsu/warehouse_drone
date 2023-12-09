@@ -39,10 +39,10 @@ struct GeofenceResult_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      this->geofence_violation_reason = 0;
-      this->primary_geofence_breached = false;
-      this->primary_geofence_action = 0;
-      this->home_required = false;
+      this->geofence_max_dist_triggered = false;
+      this->geofence_max_alt_triggered = false;
+      this->geofence_custom_fence_triggered = false;
+      this->geofence_action = 0;
     }
   }
 
@@ -53,10 +53,10 @@ struct GeofenceResult_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->timestamp = 0ull;
-      this->geofence_violation_reason = 0;
-      this->primary_geofence_breached = false;
-      this->primary_geofence_action = 0;
-      this->home_required = false;
+      this->geofence_max_dist_triggered = false;
+      this->geofence_max_alt_triggered = false;
+      this->geofence_custom_fence_triggered = false;
+      this->geofence_action = 0;
     }
   }
 
@@ -64,18 +64,18 @@ struct GeofenceResult_
   using _timestamp_type =
     uint64_t;
   _timestamp_type timestamp;
-  using _geofence_violation_reason_type =
-    uint8_t;
-  _geofence_violation_reason_type geofence_violation_reason;
-  using _primary_geofence_breached_type =
+  using _geofence_max_dist_triggered_type =
     bool;
-  _primary_geofence_breached_type primary_geofence_breached;
-  using _primary_geofence_action_type =
-    uint8_t;
-  _primary_geofence_action_type primary_geofence_action;
-  using _home_required_type =
+  _geofence_max_dist_triggered_type geofence_max_dist_triggered;
+  using _geofence_max_alt_triggered_type =
     bool;
-  _home_required_type home_required;
+  _geofence_max_alt_triggered_type geofence_max_alt_triggered;
+  using _geofence_custom_fence_triggered_type =
+    bool;
+  _geofence_custom_fence_triggered_type geofence_custom_fence_triggered;
+  using _geofence_action_type =
+    uint8_t;
+  _geofence_action_type geofence_action;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -84,28 +84,28 @@ struct GeofenceResult_
     this->timestamp = _arg;
     return *this;
   }
-  Type & set__geofence_violation_reason(
-    const uint8_t & _arg)
-  {
-    this->geofence_violation_reason = _arg;
-    return *this;
-  }
-  Type & set__primary_geofence_breached(
+  Type & set__geofence_max_dist_triggered(
     const bool & _arg)
   {
-    this->primary_geofence_breached = _arg;
+    this->geofence_max_dist_triggered = _arg;
     return *this;
   }
-  Type & set__primary_geofence_action(
-    const uint8_t & _arg)
-  {
-    this->primary_geofence_action = _arg;
-    return *this;
-  }
-  Type & set__home_required(
+  Type & set__geofence_max_alt_triggered(
     const bool & _arg)
   {
-    this->home_required = _arg;
+    this->geofence_max_alt_triggered = _arg;
+    return *this;
+  }
+  Type & set__geofence_custom_fence_triggered(
+    const bool & _arg)
+  {
+    this->geofence_custom_fence_triggered = _arg;
+    return *this;
+  }
+  Type & set__geofence_action(
+    const uint8_t & _arg)
+  {
+    this->geofence_action = _arg;
     return *this;
   }
 
@@ -166,16 +166,16 @@ struct GeofenceResult_
     if (this->timestamp != other.timestamp) {
       return false;
     }
-    if (this->geofence_violation_reason != other.geofence_violation_reason) {
+    if (this->geofence_max_dist_triggered != other.geofence_max_dist_triggered) {
       return false;
     }
-    if (this->primary_geofence_breached != other.primary_geofence_breached) {
+    if (this->geofence_max_alt_triggered != other.geofence_max_alt_triggered) {
       return false;
     }
-    if (this->primary_geofence_action != other.primary_geofence_action) {
+    if (this->geofence_custom_fence_triggered != other.geofence_custom_fence_triggered) {
       return false;
     }
-    if (this->home_required != other.home_required) {
+    if (this->geofence_action != other.geofence_action) {
       return false;
     }
     return true;

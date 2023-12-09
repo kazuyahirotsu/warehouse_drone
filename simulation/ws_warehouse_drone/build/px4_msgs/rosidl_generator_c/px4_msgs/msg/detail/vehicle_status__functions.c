@@ -26,11 +26,15 @@ px4_msgs__msg__VehicleStatus__init(px4_msgs__msg__VehicleStatus * msg)
   // nav_state_timestamp
   // nav_state_user_intention
   // nav_state
+  // executor_in_charge
+  // valid_nav_states_mask
+  // can_set_nav_states_mask
   // failure_detector_status
   // hil_state
   // vehicle_type
   // failsafe
   // failsafe_and_user_took_over
+  // failsafe_defer_state
   // gcs_connection_lost
   // gcs_connection_lost_counter
   // high_latency_data_link_lost
@@ -72,11 +76,15 @@ px4_msgs__msg__VehicleStatus__fini(px4_msgs__msg__VehicleStatus * msg)
   // nav_state_timestamp
   // nav_state_user_intention
   // nav_state
+  // executor_in_charge
+  // valid_nav_states_mask
+  // can_set_nav_states_mask
   // failure_detector_status
   // hil_state
   // vehicle_type
   // failsafe
   // failsafe_and_user_took_over
+  // failsafe_defer_state
   // gcs_connection_lost
   // gcs_connection_lost_counter
   // high_latency_data_link_lost
@@ -144,6 +152,18 @@ px4_msgs__msg__VehicleStatus__are_equal(const px4_msgs__msg__VehicleStatus * lhs
   if (lhs->nav_state != rhs->nav_state) {
     return false;
   }
+  // executor_in_charge
+  if (lhs->executor_in_charge != rhs->executor_in_charge) {
+    return false;
+  }
+  // valid_nav_states_mask
+  if (lhs->valid_nav_states_mask != rhs->valid_nav_states_mask) {
+    return false;
+  }
+  // can_set_nav_states_mask
+  if (lhs->can_set_nav_states_mask != rhs->can_set_nav_states_mask) {
+    return false;
+  }
   // failure_detector_status
   if (lhs->failure_detector_status != rhs->failure_detector_status) {
     return false;
@@ -162,6 +182,10 @@ px4_msgs__msg__VehicleStatus__are_equal(const px4_msgs__msg__VehicleStatus * lhs
   }
   // failsafe_and_user_took_over
   if (lhs->failsafe_and_user_took_over != rhs->failsafe_and_user_took_over) {
+    return false;
+  }
+  // failsafe_defer_state
+  if (lhs->failsafe_defer_state != rhs->failsafe_defer_state) {
     return false;
   }
   // gcs_connection_lost
@@ -285,6 +309,12 @@ px4_msgs__msg__VehicleStatus__copy(
   output->nav_state_user_intention = input->nav_state_user_intention;
   // nav_state
   output->nav_state = input->nav_state;
+  // executor_in_charge
+  output->executor_in_charge = input->executor_in_charge;
+  // valid_nav_states_mask
+  output->valid_nav_states_mask = input->valid_nav_states_mask;
+  // can_set_nav_states_mask
+  output->can_set_nav_states_mask = input->can_set_nav_states_mask;
   // failure_detector_status
   output->failure_detector_status = input->failure_detector_status;
   // hil_state
@@ -295,6 +325,8 @@ px4_msgs__msg__VehicleStatus__copy(
   output->failsafe = input->failsafe;
   // failsafe_and_user_took_over
   output->failsafe_and_user_took_over = input->failsafe_and_user_took_over;
+  // failsafe_defer_state
+  output->failsafe_defer_state = input->failsafe_defer_state;
   // gcs_connection_lost
   output->gcs_connection_lost = input->gcs_connection_lost;
   // gcs_connection_lost_counter

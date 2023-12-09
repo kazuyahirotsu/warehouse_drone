@@ -389,16 +389,32 @@ private:
   ::px4_msgs::msg::VehicleStatus msg_;
 };
 
+class Init_VehicleStatus_failsafe_defer_state
+{
+public:
+  explicit Init_VehicleStatus_failsafe_defer_state(::px4_msgs::msg::VehicleStatus & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleStatus_gcs_connection_lost failsafe_defer_state(::px4_msgs::msg::VehicleStatus::_failsafe_defer_state_type arg)
+  {
+    msg_.failsafe_defer_state = std::move(arg);
+    return Init_VehicleStatus_gcs_connection_lost(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleStatus msg_;
+};
+
 class Init_VehicleStatus_failsafe_and_user_took_over
 {
 public:
   explicit Init_VehicleStatus_failsafe_and_user_took_over(::px4_msgs::msg::VehicleStatus & msg)
   : msg_(msg)
   {}
-  Init_VehicleStatus_gcs_connection_lost failsafe_and_user_took_over(::px4_msgs::msg::VehicleStatus::_failsafe_and_user_took_over_type arg)
+  Init_VehicleStatus_failsafe_defer_state failsafe_and_user_took_over(::px4_msgs::msg::VehicleStatus::_failsafe_and_user_took_over_type arg)
   {
     msg_.failsafe_and_user_took_over = std::move(arg);
-    return Init_VehicleStatus_gcs_connection_lost(msg_);
+    return Init_VehicleStatus_failsafe_defer_state(msg_);
   }
 
 private:
@@ -469,16 +485,64 @@ private:
   ::px4_msgs::msg::VehicleStatus msg_;
 };
 
+class Init_VehicleStatus_can_set_nav_states_mask
+{
+public:
+  explicit Init_VehicleStatus_can_set_nav_states_mask(::px4_msgs::msg::VehicleStatus & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleStatus_failure_detector_status can_set_nav_states_mask(::px4_msgs::msg::VehicleStatus::_can_set_nav_states_mask_type arg)
+  {
+    msg_.can_set_nav_states_mask = std::move(arg);
+    return Init_VehicleStatus_failure_detector_status(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleStatus msg_;
+};
+
+class Init_VehicleStatus_valid_nav_states_mask
+{
+public:
+  explicit Init_VehicleStatus_valid_nav_states_mask(::px4_msgs::msg::VehicleStatus & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleStatus_can_set_nav_states_mask valid_nav_states_mask(::px4_msgs::msg::VehicleStatus::_valid_nav_states_mask_type arg)
+  {
+    msg_.valid_nav_states_mask = std::move(arg);
+    return Init_VehicleStatus_can_set_nav_states_mask(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleStatus msg_;
+};
+
+class Init_VehicleStatus_executor_in_charge
+{
+public:
+  explicit Init_VehicleStatus_executor_in_charge(::px4_msgs::msg::VehicleStatus & msg)
+  : msg_(msg)
+  {}
+  Init_VehicleStatus_valid_nav_states_mask executor_in_charge(::px4_msgs::msg::VehicleStatus::_executor_in_charge_type arg)
+  {
+    msg_.executor_in_charge = std::move(arg);
+    return Init_VehicleStatus_valid_nav_states_mask(msg_);
+  }
+
+private:
+  ::px4_msgs::msg::VehicleStatus msg_;
+};
+
 class Init_VehicleStatus_nav_state
 {
 public:
   explicit Init_VehicleStatus_nav_state(::px4_msgs::msg::VehicleStatus & msg)
   : msg_(msg)
   {}
-  Init_VehicleStatus_failure_detector_status nav_state(::px4_msgs::msg::VehicleStatus::_nav_state_type arg)
+  Init_VehicleStatus_executor_in_charge nav_state(::px4_msgs::msg::VehicleStatus::_nav_state_type arg)
   {
     msg_.nav_state = std::move(arg);
-    return Init_VehicleStatus_failure_detector_status(msg_);
+    return Init_VehicleStatus_executor_in_charge(msg_);
   }
 
 private:

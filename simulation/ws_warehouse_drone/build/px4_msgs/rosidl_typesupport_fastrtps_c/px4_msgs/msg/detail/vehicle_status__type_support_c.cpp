@@ -94,6 +94,21 @@ static bool _VehicleStatus__cdr_serialize(
     cdr << ros_message->nav_state;
   }
 
+  // Field name: executor_in_charge
+  {
+    cdr << ros_message->executor_in_charge;
+  }
+
+  // Field name: valid_nav_states_mask
+  {
+    cdr << ros_message->valid_nav_states_mask;
+  }
+
+  // Field name: can_set_nav_states_mask
+  {
+    cdr << ros_message->can_set_nav_states_mask;
+  }
+
   // Field name: failure_detector_status
   {
     cdr << ros_message->failure_detector_status;
@@ -117,6 +132,11 @@ static bool _VehicleStatus__cdr_serialize(
   // Field name: failsafe_and_user_took_over
   {
     cdr << (ros_message->failsafe_and_user_took_over ? true : false);
+  }
+
+  // Field name: failsafe_defer_state
+  {
+    cdr << ros_message->failsafe_defer_state;
   }
 
   // Field name: gcs_connection_lost
@@ -291,6 +311,21 @@ static bool _VehicleStatus__cdr_deserialize(
     cdr >> ros_message->nav_state;
   }
 
+  // Field name: executor_in_charge
+  {
+    cdr >> ros_message->executor_in_charge;
+  }
+
+  // Field name: valid_nav_states_mask
+  {
+    cdr >> ros_message->valid_nav_states_mask;
+  }
+
+  // Field name: can_set_nav_states_mask
+  {
+    cdr >> ros_message->can_set_nav_states_mask;
+  }
+
   // Field name: failure_detector_status
   {
     cdr >> ros_message->failure_detector_status;
@@ -318,6 +353,11 @@ static bool _VehicleStatus__cdr_deserialize(
     uint8_t tmp;
     cdr >> tmp;
     ros_message->failsafe_and_user_took_over = tmp ? true : false;
+  }
+
+  // Field name: failsafe_defer_state
+  {
+    cdr >> ros_message->failsafe_defer_state;
   }
 
   // Field name: gcs_connection_lost
@@ -544,6 +584,24 @@ size_t get_serialized_size_px4_msgs__msg__VehicleStatus(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
+  // field.name executor_in_charge
+  {
+    size_t item_size = sizeof(ros_message->executor_in_charge);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name valid_nav_states_mask
+  {
+    size_t item_size = sizeof(ros_message->valid_nav_states_mask);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name can_set_nav_states_mask
+  {
+    size_t item_size = sizeof(ros_message->can_set_nav_states_mask);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
   // field.name failure_detector_status
   {
     size_t item_size = sizeof(ros_message->failure_detector_status);
@@ -571,6 +629,12 @@ size_t get_serialized_size_px4_msgs__msg__VehicleStatus(
   // field.name failsafe_and_user_took_over
   {
     size_t item_size = sizeof(ros_message->failsafe_and_user_took_over);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name failsafe_defer_state
+  {
+    size_t item_size = sizeof(ros_message->failsafe_defer_state);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -733,6 +797,8 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
 
   const size_t padding = 4;
   const size_t wchar_size = 4;
+  size_t last_member_size = 0;
+  (void)last_member_size;
   (void)padding;
   (void)wchar_size;
 
@@ -743,6 +809,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -750,6 +817,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -757,6 +825,7 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -764,24 +833,28 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: latest_arming_reason
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: latest_disarming_reason
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: nav_state_timestamp
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint64_t);
     current_alignment += array_size * sizeof(uint64_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
   }
@@ -789,18 +862,44 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: nav_state
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: executor_in_charge
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: valid_nav_states_mask
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: can_set_nav_states_mask
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
   // member: failure_detector_status
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint16_t);
     current_alignment += array_size * sizeof(uint16_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint16_t));
   }
@@ -808,166 +907,213 @@ size_t max_serialized_size_px4_msgs__msg__VehicleStatus(
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: vehicle_type
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: failsafe
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: failsafe_and_user_took_over
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+  // member: failsafe_defer_state
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: gcs_connection_lost
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: gcs_connection_lost_counter
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: high_latency_data_link_lost
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: is_vtol
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: is_vtol_tailsitter
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: in_transition_mode
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: in_transition_to_fw
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: system_type
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: system_id
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: component_id
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: safety_button_available
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: safety_off
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: power_input_valid
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: usb_connected
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: open_drone_id_system_present
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: open_drone_id_system_healthy
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: parachute_system_present
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: parachute_system_healthy
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: avoidance_system_required
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: avoidance_system_valid
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: rc_calibration_in_progress
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: calibration_enabled
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
   // member: pre_flight_checks_pass
   {
     size_t array_size = 1;
 
+    last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  return current_alignment - initial_alignment;
+  size_t ret_val = current_alignment - initial_alignment;
+  if (is_plain) {
+    // All members are plain, and type is not empty.
+    // We still need to check that the in-memory alignment
+    // is the same as the CDR mandated alignment.
+    using DataType = px4_msgs__msg__VehicleStatus;
+    is_plain =
+      (
+      offsetof(DataType, pre_flight_checks_pass) +
+      last_member_size
+      ) == ret_val;
+  }
+
+  return ret_val;
 }
 
 static size_t _VehicleStatus__max_serialized_size(char & bounds_info)

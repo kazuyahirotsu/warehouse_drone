@@ -300,10 +300,58 @@ enum
   px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_AUTO_VTOL_TAKEOFF = 22
 };
 
+/// Constant 'NAVIGATION_STATE_EXTERNAL1'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL1 = 23
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL2'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL2 = 24
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL3'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL3 = 25
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL4'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL4 = 26
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL5'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL5 = 27
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL6'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL6 = 28
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL7'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL7 = 29
+};
+
+/// Constant 'NAVIGATION_STATE_EXTERNAL8'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_EXTERNAL8 = 30
+};
+
 /// Constant 'NAVIGATION_STATE_MAX'.
 enum
 {
-  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_MAX = 23
+  px4_msgs__msg__VehicleStatus__NAVIGATION_STATE_MAX = 31
 };
 
 /// Constant 'FAILURE_NONE'.
@@ -426,6 +474,27 @@ enum
   px4_msgs__msg__VehicleStatus__VEHICLE_TYPE_AIRSHIP = 4
 };
 
+/// Constant 'FAILSAFE_DEFER_STATE_DISABLED'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_DISABLED = 0
+};
+
+/// Constant 'FAILSAFE_DEFER_STATE_ENABLED'.
+enum
+{
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_ENABLED = 1
+};
+
+/// Constant 'FAILSAFE_DEFER_STATE_WOULD_FAILSAFE'.
+/**
+  * Failsafes deferred, but would trigger a failsafe
+ */
+enum
+{
+  px4_msgs__msg__VehicleStatus__FAILSAFE_DEFER_STATE_WOULD_FAILSAFE = 2
+};
+
 /// Struct defined in msg/VehicleStatus in the package px4_msgs.
 /**
   * Encodes the system state of the vehicle published by commander
@@ -447,6 +516,12 @@ typedef struct px4_msgs__msg__VehicleStatus
   uint8_t nav_state_user_intention;
   /// Currently active mode
   uint8_t nav_state;
+  /// Current mode executor in charge (0=Autopilot)
+  uint8_t executor_in_charge;
+  /// Bitmask for all valid nav_state values
+  uint32_t valid_nav_states_mask;
+  /// Bitmask for all modes that a user can select
+  uint32_t can_set_nav_states_mask;
   /// Bitmask of detected failures
   uint16_t failure_detector_status;
   uint8_t hil_state;
@@ -456,6 +531,8 @@ typedef struct px4_msgs__msg__VehicleStatus
   bool failsafe;
   /// true if system is in failsafe state but the user took over control
   bool failsafe_and_user_took_over;
+  /// one of FAILSAFE_DEFER_STATE_*
+  uint8_t failsafe_defer_state;
   /// Link loss
   /// datalink to GCS lost
   bool gcs_connection_lost;

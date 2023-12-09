@@ -44,7 +44,8 @@ struct OffboardControlMode_
       this->acceleration = false;
       this->attitude = false;
       this->body_rate = false;
-      this->actuator = false;
+      this->thrust_and_torque = false;
+      this->direct_actuator = false;
     }
   }
 
@@ -60,7 +61,8 @@ struct OffboardControlMode_
       this->acceleration = false;
       this->attitude = false;
       this->body_rate = false;
-      this->actuator = false;
+      this->thrust_and_torque = false;
+      this->direct_actuator = false;
     }
   }
 
@@ -83,9 +85,12 @@ struct OffboardControlMode_
   using _body_rate_type =
     bool;
   _body_rate_type body_rate;
-  using _actuator_type =
+  using _thrust_and_torque_type =
     bool;
-  _actuator_type actuator;
+  _thrust_and_torque_type thrust_and_torque;
+  using _direct_actuator_type =
+    bool;
+  _direct_actuator_type direct_actuator;
 
   // setters for named parameter idiom
   Type & set__timestamp(
@@ -124,10 +129,16 @@ struct OffboardControlMode_
     this->body_rate = _arg;
     return *this;
   }
-  Type & set__actuator(
+  Type & set__thrust_and_torque(
     const bool & _arg)
   {
-    this->actuator = _arg;
+    this->thrust_and_torque = _arg;
+    return *this;
+  }
+  Type & set__direct_actuator(
+    const bool & _arg)
+  {
+    this->direct_actuator = _arg;
     return *this;
   }
 
@@ -191,7 +202,10 @@ struct OffboardControlMode_
     if (this->body_rate != other.body_rate) {
       return false;
     }
-    if (this->actuator != other.actuator) {
+    if (this->thrust_and_torque != other.thrust_and_torque) {
+      return false;
+    }
+    if (this->direct_actuator != other.direct_actuator) {
       return false;
     }
     return true;

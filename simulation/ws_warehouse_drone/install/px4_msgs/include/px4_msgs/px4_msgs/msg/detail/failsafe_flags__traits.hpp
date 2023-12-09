@@ -228,10 +228,10 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_breached
   {
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
     out << ", ";
   }
 
@@ -593,13 +593,13 @@ inline void to_block_style_yaml(
     out << "\n";
   }
 
-  // member: primary_geofence_breached
+  // member: geofence_breached
   {
     if (indentation > 0) {
       out << std::string(indentation, ' ');
     }
-    out << "primary_geofence_breached: ";
-    rosidl_generator_traits::value_to_yaml(msg.primary_geofence_breached, out);
+    out << "geofence_breached: ";
+    rosidl_generator_traits::value_to_yaml(msg.geofence_breached, out);
     out << "\n";
   }
 

@@ -46,7 +46,7 @@ px4_msgs__msg__FailsafeFlags__init(px4_msgs__msg__FailsafeFlags * msg)
   // battery_warning
   // battery_low_remaining_time
   // battery_unhealthy
-  // primary_geofence_breached
+  // geofence_breached
   // mission_failure
   // vtol_fixed_wing_system_failure
   // wind_limit_exceeded
@@ -94,7 +94,7 @@ px4_msgs__msg__FailsafeFlags__fini(px4_msgs__msg__FailsafeFlags * msg)
   // battery_warning
   // battery_low_remaining_time
   // battery_unhealthy
-  // primary_geofence_breached
+  // geofence_breached
   // mission_failure
   // vtol_fixed_wing_system_failure
   // wind_limit_exceeded
@@ -228,8 +228,8 @@ px4_msgs__msg__FailsafeFlags__are_equal(const px4_msgs__msg__FailsafeFlags * lhs
   if (lhs->battery_unhealthy != rhs->battery_unhealthy) {
     return false;
   }
-  // primary_geofence_breached
-  if (lhs->primary_geofence_breached != rhs->primary_geofence_breached) {
+  // geofence_breached
+  if (lhs->geofence_breached != rhs->geofence_breached) {
     return false;
   }
   // mission_failure
@@ -337,8 +337,8 @@ px4_msgs__msg__FailsafeFlags__copy(
   output->battery_low_remaining_time = input->battery_low_remaining_time;
   // battery_unhealthy
   output->battery_unhealthy = input->battery_unhealthy;
-  // primary_geofence_breached
-  output->primary_geofence_breached = input->primary_geofence_breached;
+  // geofence_breached
+  output->geofence_breached = input->geofence_breached;
   // mission_failure
   output->mission_failure = input->mission_failure;
   // vtol_fixed_wing_system_failure

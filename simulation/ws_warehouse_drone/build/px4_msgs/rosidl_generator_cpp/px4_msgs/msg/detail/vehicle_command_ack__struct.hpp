@@ -86,7 +86,7 @@ struct VehicleCommandAck_
     uint8_t;
   _target_system_type target_system;
   using _target_component_type =
-    uint8_t;
+    uint16_t;
   _target_component_type target_component;
   using _from_external_type =
     bool;
@@ -130,7 +130,7 @@ struct VehicleCommandAck_
     return *this;
   }
   Type & set__target_component(
-    const uint8_t & _arg)
+    const uint16_t & _arg)
   {
     this->target_component = _arg;
     return *this;

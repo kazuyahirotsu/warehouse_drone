@@ -118,7 +118,7 @@ struct VehicleCommand_
     uint8_t;
   _source_system_type source_system;
   using _source_component_type =
-    uint8_t;
+    uint16_t;
   _source_component_type source_component;
   using _confirmation_type =
     uint8_t;
@@ -201,7 +201,7 @@ struct VehicleCommand_
     return *this;
   }
   Type & set__source_component(
-    const uint8_t & _arg)
+    const uint16_t & _arg)
   {
     this->source_component = _arg;
     return *this;
@@ -356,6 +356,8 @@ struct VehicleCommand_
     246u;
   static constexpr uint16_t VEHICLE_CMD_OBLIQUE_SURVEY =
     260u;
+  static constexpr uint16_t VEHICLE_CMD_DO_SET_STANDARD_MODE =
+    262u;
   static constexpr uint16_t VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION =
     283u;
   static constexpr uint16_t VEHICLE_CMD_MISSION_START =
@@ -414,6 +416,8 @@ struct VehicleCommand_
     65537u;
   static constexpr uint32_t VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN =
     100000u;
+  static constexpr uint32_t VEHICLE_CMD_SET_NAV_STATE =
+    100001u;
   static constexpr uint8_t VEHICLE_MOUNT_MODE_RETRACT =
     0u;
   static constexpr uint8_t VEHICLE_MOUNT_MODE_NEUTRAL =
@@ -508,6 +512,8 @@ struct VehicleCommand_
     1u;
   static constexpr uint8_t ORB_QUEUE_LENGTH =
     8u;
+  static constexpr uint16_t COMPONENT_MODE_EXECUTOR_START =
+    1000u;
 
   // pointer types
   using RawPtr =
@@ -950,6 +956,11 @@ constexpr uint16_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_OBLIQUE_SURV
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
+constexpr uint16_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_DO_SET_STANDARD_MODE;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
 constexpr uint16_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
@@ -1091,6 +1102,11 @@ constexpr uint32_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_PX4_INTERNAL
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint32_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint32_t VehicleCommand_<ContainerAllocator>::VEHICLE_CMD_SET_NAV_STATE;
 #endif  // __cplusplus < 201703L
 #if __cplusplus < 201703L
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
@@ -1326,6 +1342,11 @@ constexpr uint8_t VehicleCommand_<ContainerAllocator>::GRIPPER_ACTION_GRAB;
 // static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
 template<typename ContainerAllocator>
 constexpr uint8_t VehicleCommand_<ContainerAllocator>::ORB_QUEUE_LENGTH;
+#endif  // __cplusplus < 201703L
+#if __cplusplus < 201703L
+// static constexpr member variable definitions are only needed in C++14 and below, deprecated in C++17
+template<typename ContainerAllocator>
+constexpr uint16_t VehicleCommand_<ContainerAllocator>::COMPONENT_MODE_EXECUTOR_START;
 #endif  // __cplusplus < 201703L
 
 }  // namespace msg

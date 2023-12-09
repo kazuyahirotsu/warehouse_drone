@@ -620,6 +620,15 @@ enum
   px4_msgs__msg__VehicleCommand__VEHICLE_CMD_OBLIQUE_SURVEY = 260
 };
 
+/// Constant 'VEHICLE_CMD_DO_SET_STANDARD_MODE'.
+/**
+  * Enable the specified standard MAVLink mode |MAV_STANDARD_MODE|
+ */
+enum
+{
+  px4_msgs__msg__VehicleCommand__VEHICLE_CMD_DO_SET_STANDARD_MODE = 262
+};
+
 /// Constant 'VEHICLE_CMD_GIMBAL_DEVICE_INFORMATION'.
 /**
   * Command to ask information about a low level gimbal
@@ -877,6 +886,15 @@ enum
 enum
 {
   px4_msgs__msg__VehicleCommand__VEHICLE_CMD_SET_GPS_GLOBAL_ORIGIN = 100000ul
+};
+
+/// Constant 'VEHICLE_CMD_SET_NAV_STATE'.
+/**
+  * Change mode by specifying nav_state directly. |nav_state|Empty|Empty|Empty|Empty|Empty|Empty|
+ */
+enum
+{
+  px4_msgs__msg__VehicleCommand__VEHICLE_CMD_SET_NAV_STATE = 100001ul
 };
 
 /// Constant 'VEHICLE_MOUNT_MODE_RETRACT'.
@@ -1200,6 +1218,12 @@ enum
   px4_msgs__msg__VehicleCommand__ORB_QUEUE_LENGTH = 8
 };
 
+/// Constant 'COMPONENT_MODE_EXECUTOR_START'.
+enum
+{
+  px4_msgs__msg__VehicleCommand__COMPONENT_MODE_EXECUTOR_START = 1000
+};
+
 /// Struct defined in msg/VehicleCommand in the package px4_msgs.
 /**
   * Vehicle Command uORB message. Used for commanding a mission / action / etc.
@@ -1231,8 +1255,8 @@ typedef struct px4_msgs__msg__VehicleCommand
   uint8_t target_component;
   /// System sending the command
   uint8_t source_system;
-  /// Component sending the command
-  uint8_t source_component;
+  /// Component / mode executor sending the command
+  uint16_t source_component;
   /// 0: First transmission of this command. 1-255: Confirmation transmissions (e.g. for kill command)
   uint8_t confirmation;
   bool from_external;

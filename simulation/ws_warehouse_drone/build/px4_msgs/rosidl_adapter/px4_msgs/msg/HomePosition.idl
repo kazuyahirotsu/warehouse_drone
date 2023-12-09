@@ -55,6 +55,10 @@ module px4_msgs {
       @verbatim (language="comment", text=
         "true when home position was set manually")
       boolean manual_home;
+
+      @verbatim (language="comment", text=
+        "update counter of the home position")
+      uint32 update_count;
     };
   };
 };
